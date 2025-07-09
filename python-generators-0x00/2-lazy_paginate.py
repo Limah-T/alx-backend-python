@@ -4,7 +4,7 @@ def paginate_users(page_size:int, offset: int =0):
     connection = connect_db()
     cursor = connection.cursor()
     cursor.execute("USE ALX_prodev")
-    cursor.execute(f"SELECT user_id, name, email, age FROM user_data LIMIT {page_size} OFFSET {offset}")
+    cursor.execute(f"SELECT * FROM user_data LIMIT {page_size} OFFSET {offset}")
     paginated = cursor.fetchall()
     data = [{ "user_id": row[0], "name": row[1], "email": row[2], "age": int(row[3])} for row in paginated]
     cursor.close()
