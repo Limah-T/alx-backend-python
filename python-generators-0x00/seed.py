@@ -48,7 +48,7 @@ def insert_data(connection, data):
     print("Data Inserted")
     cursor.close()
 
-create_table(connect_db())
-insert_data(connection=connect_db(), data="user_data.csv")
+# create_table(connect_db())
+# insert_data(connection=connect_db(), data="user_data.csv")
 
  
