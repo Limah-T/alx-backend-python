@@ -13,9 +13,9 @@ def stream_users_in_batches(batch_size:int):
             yield batch
 
             offset += int(batch_size)
-        return 
 
-    cursor.close()
+        cursor.close()
+        return
 
 def batch_processing(batch_size:int):
     connection = connect_db()
