@@ -8,12 +8,12 @@ def stream_users_in_batches(batch_size:int):
     while True:
         cursor.execute(f"SELECT user_id, name, email, age FROM user_data LIMIT {batch_size} OFFSET {offset}")
         rows = cursor.fetchall()
-        if not rows:
-            break
-        batch = [{ "user_id": row[0], "name": row[1], "email": row[2], "age": int(row[3])} for row in rows ]
-        yield batch
+        if rows:
+            batch = [{ "user_id": row[0], "name": row[1], "email": row[2], "age": int(row[3])} for row in rows ]
+            yield batch
 
-        offset += int(batch_size)
+            offset += int(batch_size)
+        return 
 
     cursor.close()
 
@@ -27,5 +27,5 @@ def batch_processing(batch_size:int):
                 yield user
     cursor.close()
 
-# for x in batch_processing("5"):
-#     print(x)
+for x in batch_processing("15"):
+    print(x)
