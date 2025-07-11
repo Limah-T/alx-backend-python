@@ -1,5 +1,6 @@
 import sqlite3
 import functools
+from datetime import datetime
 
 def connect_to_db():
     conn = sqlite3.connect("user.db")
@@ -9,8 +10,8 @@ def log_queries(func):
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
         query = kwargs.get("query") if "query" in kwargs else args[0] if args else "UNKNOWN QUERY"
-        print(query)
-        print("Executing SQL Query: ", query)
+        date = datetime.today()
+        print(f"Executing SQL Query: {query} on {date}")
         return func(*args, **kwargs)
     return wrapper
 
