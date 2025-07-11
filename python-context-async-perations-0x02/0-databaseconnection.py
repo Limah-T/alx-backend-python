@@ -16,5 +16,5 @@ class DatabaseConnection:
 
 with DatabaseConnection() as connection:
     cursor = connection.cursor()
-    cursor.execute("SELECT * FROM user")
+    cursor.execute("SELECT * FROM users")
     print(cursor.fetchall())
