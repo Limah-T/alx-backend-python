@@ -4,8 +4,10 @@ db_file_path = "C:/Users/User/OneDrive/Desktop/alx-backend-python/python-decorat
 
 class DatabaseConnection:
 
+    def __init__(self):
+        self.conn = sqlite3.connect(db_file_path)
+
     def __enter__(self):
-        self.conn = sqlite3.connect(db_file_path)       
         return self.conn
 
     def __exit__(self, exc_type, exc_value, exc_tb):
