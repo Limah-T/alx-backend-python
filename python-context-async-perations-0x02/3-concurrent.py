@@ -1,5 +1,4 @@
-import aiosqlite
-import asyncio
+import aiosqlite, asyncio
 
 db_file_path = "C:/Users/User/OneDrive/Desktop/alx-backend-python/python-decorators-0x01/user.db"
 
@@ -10,7 +9,7 @@ async def async_fetch_users():
 
 async def async_fetch_older_users():
     async with aiosqlite.connect(database=db_file_path) as db:
-        async with db.execute("SELECT * FROM user WHERE age = 20") as cursor:
+        async with db.execute("SELECT * FROM user WHERE age > 40") as cursor:
             return await cursor.fetchall()
 
 async def fetch_concurrently():
