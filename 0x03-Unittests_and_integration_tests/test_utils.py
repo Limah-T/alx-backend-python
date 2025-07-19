@@ -34,5 +34,14 @@ class TestAccessNestedMap(unittest.TestCase):
     ])
 
     def test_access_nested_map(self, input:Mapping[str, int], path:Sequence, expected):
-        self.assertEqual(access_nested_map(input, path), expected)       
+        self.assertEqual(access_nested_map(input, path), expected)
 
+
+    @parameterized.expand([
+        ({}, ("a"), 1),
+        ({"a":1}, ("a", "b"), 1)
+    ])    
+
+    def test_access_nested_map_exception(self, input:Mapping[str, int], path:Sequence, expected):
+        self.assertRaises(KeyError, access_nested_map(input, path), msg="You have an error in your code.")
+        
