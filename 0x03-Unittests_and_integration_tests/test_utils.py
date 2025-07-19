@@ -38,8 +38,8 @@ class TestAccessNestedMap(unittest.TestCase):
 
 
     @parameterized.expand([
-        ({}, ("a"), 1),
-        ({"a":1}, ("a", "b"), 1)
+        ({}, ("a")),
+        ({"a":1}, ("a", "b"))
     ])    
 
     def test_access_nested_map_exception(self, input:Mapping[str, int], path:Sequence, expected):
