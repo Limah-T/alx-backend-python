@@ -37,11 +37,11 @@ class TestGetJson(unittest.TestCase):
     """
 
     @parameterized.expand([
-        ("example", "http://example.com", {"payload": True}),
-        ("holberton", "http://holberton.io", {"payload": False}),
+        ("http://example.com", {"payload": True}),
+        ("http://holberton.io", {"payload": False}),
     ])
     @patch("utils.requests.get")
-    def test_get_json(self, name: str, test_url: str, test_payload: dict, mock_get):
+    def test_get_json(self, test_url: str, test_payload: dict, mock_get):
         """
         Test that get_json returns the correct payload and
         that requests.get is called with the correct URL.
