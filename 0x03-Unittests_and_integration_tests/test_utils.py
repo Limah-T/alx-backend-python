@@ -29,7 +29,7 @@ def access_nested_map(nested_map: Mapping, path: Sequence) -> Any:
 
 class TestAccessNestedMap(unittest.TestCase):
     @parameterized.expand([
-        ({"a": 1}, ("a"), 1),
+        ({"a": 1}, ("a",), 1),
         ({"a": {"b": 2}}, ("a",), {"b": 2}),
         ({"a": {"b": 2}}, ("a", "b"), 2)
     ])
