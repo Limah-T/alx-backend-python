@@ -29,7 +29,7 @@ def access_nested_map(nested_map: Mapping, path: Sequence) -> Any:
 
 class TestAccessNestedMap(unittest.TestCase):
     @parameterized.expand([
-        ({"a": 1},  ("a",), 1),
+        ({"a": 1}, ("a"), 1),
         ({"a": {"b": 2}}, ("a",), {"b": 2}),
         ({"a": {"b": 2}}, ("a", "b"), 2)
     ])
@@ -54,11 +54,6 @@ class TestGetJson(unittest.TestCase):
         mock_response.json.return_value = expected
         mock_get.return_value = mock_response
         response = get_json(url)
-        self.assertTrue(response, expected)
+        self.assertEqual(response, expected)
         mock_get.assert_called_once_with(url)
-        mock_get.assert_called_once_with(url)
-        mock_get.assert_called_once_with(url)
-        mock_get.assert_called_once_with(url)
-        mock_get.assert_called_once_with(url)
-        mock_get.assert_called_once_with(url)
-        mock_get.assert_called_once_with(url)
+
