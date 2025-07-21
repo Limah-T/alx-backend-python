@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from .models import User, Conversation, Message
 
 class UserSerializer(serializers.Serializer):
     user_id = serializers.UUIDField(format="hex_verbose", read_only=True)
