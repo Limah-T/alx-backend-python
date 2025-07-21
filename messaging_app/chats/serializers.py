@@ -17,7 +17,6 @@ class UserSerializer(serializers.Serializer):
             raise serializers.ValidationError("This field may not be blank")
         return super().create(validated_data)
 
-
 class MessageSerializer(serializers.ModelSerializer):
     message_id = serializers.UUIDField(format="hex_verbose", read_only=True)
     sender_id = serializers.UUIDField(format="hex_verbose", read_only=True)
@@ -37,7 +36,7 @@ class ConversationSerializer(serializers.ModelSerializer):
     messages = serializers.SerializerMethodField()
 
     def get_messages(self, obj):
-        ...
+        return MessageSerializer()
 
 
 

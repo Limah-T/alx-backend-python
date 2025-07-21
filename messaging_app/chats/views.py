@@ -5,6 +5,28 @@ from rest_framework.response import Response
 from rest_framework import status
 from .models import User, Message, Conversation
 from .serializers import UserSerializer, MessageSerializer, ConversationSerializer
+from collections import namedtuple
+from rest_framework.routers import SimpleRouter, Route
+
+class NestedDefaultRouter(SimpleRouter):
+    routes = [
+       Route(
+           url=r'^{prefix}/{lookup}$',
+           mapping={'get': 'retrieve'},
+           name='{basename}-detail',
+           detail=True,
+           initkwargs={'suffix': 'Detail'}
+       ),
+
+       Route(
+           url=r'^{prefix}$',
+           mapping={'get': 'list'},
+           name='{basename}-list',
+           detail=False,
+           initkwargs={'suffix': 'List'}
+       ) 
+    ]
+
 
 class ConversationViewSet(ViewSet):
     authentication_classes = []
