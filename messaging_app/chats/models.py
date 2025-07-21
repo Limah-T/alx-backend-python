@@ -40,7 +40,7 @@ class User(AbstractUser):
 class Message(models.Model):
     message_id = models.UUIDField(primary_key=True, default=uuid.uuid4, db_index=True)
     sender_id = models.ForeignKey(User, on_delete=models.CASCADE())
-    message = models.TextField(null=False)
+    message_body = models.TextField(null=False)
     sent_at = models.DateTimeField(auto_now=True)
 
 class Conversation(models.Model):
