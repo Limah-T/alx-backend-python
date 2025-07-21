@@ -12,7 +12,7 @@ class ConversationViewSet(ViewSet):
 
     @action(detail=True, methods=["GET"])
     def list(self, request):
-        data = Conversation.objects.filter(participants_id=request.user).all()
+        data = Conversation.objects.filter(participants_id=request.user)
         serializer = ConversationSerializer(data=data)
         return Response(data=serializer.data, status=status.HTTP_200_OK)
 
@@ -23,14 +23,14 @@ class ConversationViewSet(ViewSet):
             serializer.save()
             return Response(data=serializer.validated_data, status=status.HTTP_200_OK)
         
-
+["filters"]
 class MessageViewSet(ViewSet):
     authentication_classes = []
     permission_classes = []
 
     @action(detail=True, methods=["GET"])
     def list(self, request):
-        data = Message.objects.filter(sender_id=request.user).all()
+        data = Message.objects.filter(sender_id=request.user)
         serializer = MessageSerializer(data=data)
         return Response(data=serializer.data, status=status.HTTP_200_OK)
     
