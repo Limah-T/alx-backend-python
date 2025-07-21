@@ -1,5 +1,4 @@
 from rest_framework import serializers
-from .models import User, Conversation, Message
 
 class UserSerializer(serializers.Serializer):
     user_id = serializers.UUIDField(format="hex_verbose", read_only=True)
@@ -34,7 +33,10 @@ class ConversationSerializer(serializers.ModelSerializer):
     conversation_id = serializers.UUIDField(format="hex_verbose", read_only=True)
     participant_id = serializers.UUIDField(format="hex_verbose", read_only=True)
     created_at = serializers.DateTimeField()
-    messages = MessageSerializer(many=True)
+    messages = serializers.SerializerMethodField()
+
+    def get_messages(self, obj):
+        ...
 
 
 
