@@ -35,9 +35,5 @@ class ConversationSerializer(serializers.Serializer):
     created_at = serializers.DateTimeField(read_only=True)
     message = MessageSerializer()
 
-# "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1MzU0MTY3OCwiaWF0IjoxNzUzNDU1Mjc4LCJqdGkiOiI2MzZmZjAxYjJmNGU0MzZhOTA3OTlkMjk1YzNjMTVmMyIsInVzZXJfaWQiOiI3Njc3MDdlMy1jMjU3LTQ4MTMtYjgwNS00YTI4ZGM4YTc2ZjcifQ.dMUtI_0ikgwsB3gnL6FHtL53CTXNWd5ebxzdv5E9Cmk"
-
-"""New Refresh Token"""
-# "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1MzU0Mjk3MywiaWF0IjoxNzUzNDU2NTczLCJqdGkiOiI1ZWYxNjUzZWY1MzQ0MjgzYmRlOGVmYTQ5MTU1MWIwYyIsInVzZXJfaWQiOiI3Njc3MDdlMy1jMjU3LTQ4MTMtYjgwNS00YTI4ZGM4YTc2ZjcifQ.Qygbz1QnGT0gSf4NJhAHVGJ7ImIaKzAdNpGkwkuAHYc"
 
     
