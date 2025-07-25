@@ -1,43 +1,43 @@
 from rest_framework import serializers
+from dj_rest_auth.serializers import LoginSerializer
 from .models import User, Conversation, Message
 
-class UserSerializer(serializers.Serializer):
-    user_id = serializers.UUIDField(format="hex_verbose", read_only=True)
-    first_name = serializers.CharField(max_length=255)
-    last_name = serializers.CharField(max_length=255)
+
+class RegisterSerializer(serializers.Serializer):
+    username = serializers.CharField(required=False, allow_blank=True)
+    first_name = serializers.CharField(max_length=255, min_length=3)
+    last_name = serializers.CharField(max_length=255, min_length=3)
     email = serializers.EmailField()
-    phone_number = serializers.CharField(max_length=16)
-    created_at = serializers.DateTimeField()
+    phone_number = serializers.CharField(max_length=16, allow_blank=True, required=False)
+    password = serializers.CharField(write_only=True, style={'input_type': 'password'})
+    created_at = serializers.DateTimeField(read_only=True)   
 
-    def create(self, validated_data):
-        firstname = validated_data.get("first_name")
-        last_name = validated_data.get("last_name")
-        email = validated_data.get("email")
-        if not all([firstname, last_name, email]):
-            raise serializers.ValidationError("This field may not be blank")
-        return super().create(validated_data)
-
-class MessageSerializer(serializers.ModelSerializer):
-    message_id = serializers.UUIDField(format="hex_verbose", read_only=True)
-    sender_id = serializers.UUIDField(format="hex_verbose", read_only=True)
+    def validate_password(self, value):
+        if not value:
+            raise serializers.ValidationError("This field cannot be blank")
+        if value and len(value) < 8:
+            raise serializers.ValidationError("Password length should be greater than or equal to 8")
+        return value.strip()
+    
+class CustomLoginSerializer(LoginSerializer):
+    email = serializers.EmailField()
+    password = serializers.CharField(write_only=True, style={'input_type': 'password'})
+    
+class MessageSerializer(serializers.Serializer):
+    message_id = serializers.UUIDField(read_only=True)
+    sender = serializers.UUIDField(read_only=True)
     message_body = serializers.CharField(max_length=255)
-    sent_at = serializers.DateTimeField()
+    sent_at = serializers.DateTimeField(read_only=True)
 
-    def create(self, validated_data):
-        message_body = validated_data.get("message_body")
-        if not message_body:
-            raise serializers.ValidationError("This field may not be blank")
-        return super().create(validated_data)
-
-class ConversationSerializer(serializers.ModelSerializer):
+class ConversationSerializer(serializers.Serializer):
     conversation_id = serializers.UUIDField(format="hex_verbose", read_only=True)
-    participant_id = serializers.UUIDField(format="hex_verbose", read_only=True)
-    created_at = serializers.DateTimeField()
-    messages = serializers.SerializerMethodField()
+    participant = serializers.UUIDField(format="hex_verbose", read_only=True)
+    created_at = serializers.DateTimeField(read_only=True)
+    message = MessageSerializer()
 
-    def get_messages(self, obj):
-        return MessageSerializer()
+# "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1MzU0MTY3OCwiaWF0IjoxNzUzNDU1Mjc4LCJqdGkiOiI2MzZmZjAxYjJmNGU0MzZhOTA3OTlkMjk1YzNjMTVmMyIsInVzZXJfaWQiOiI3Njc3MDdlMy1jMjU3LTQ4MTMtYjgwNS00YTI4ZGM4YTc2ZjcifQ.dMUtI_0ikgwsB3gnL6FHtL53CTXNWd5ebxzdv5E9Cmk"
 
-
+"""New Refresh Token"""
+# "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1MzU0Mjk3MywiaWF0IjoxNzUzNDU2NTczLCJqdGkiOiI1ZWYxNjUzZWY1MzQ0MjgzYmRlOGVmYTQ5MTU1MWIwYyIsInVzZXJfaWQiOiI3Njc3MDdlMy1jMjU3LTQ4MTMtYjgwNS00YTI4ZGM4YTc2ZjcifQ.Qygbz1QnGT0gSf4NJhAHVGJ7ImIaKzAdNpGkwkuAHYc"
 
     
