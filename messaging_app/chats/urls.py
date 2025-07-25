@@ -1,7 +1,8 @@
 from django.urls import path, include
 from rest_framework import routers
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
-from .views import RegisterViewset, CustomLoginView, ALLUserViewset, ConversationViewSet, MessageViewSet
+from .auth import RegisterViewset, CustomLoginView
+from .views import ALLUserViewset, ConversationViewSet, MessageViewSet
 from .custom_routers import NestedDefaultRouter
 
 router = routers.DefaultRouter()
