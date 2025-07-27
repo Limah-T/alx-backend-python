@@ -1,15 +1,13 @@
-from rest_framework.viewsets import ViewSet, ModelViewSet
-from rest_framework.decorators import action
+from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework_simplejwt.authentication import JWTAuthentication
-from rest_framework.permissions import IsAuthenticated, AllowAny, IsAdminUser
-from rest_framework.decorators import permission_classes
-from rest_framework_simplejwt.token_blacklist.models import BlacklistedToken, OutstandingToken
-from django.contrib.auth import login
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.generics import ListAPIView
 from .models import User, Message, Conversation
 from .serializers import RegisterSerializer, MessageSerializer, ConversationSerializer
 from .permissions import IsParticipantOfConversation
+from .pagination import CustomPagination
 from datetime import datetime
 
 class ALLUserViewset(ViewSet):
@@ -19,12 +17,15 @@ class ALLUserViewset(ViewSet):
     def list(self, request):
         serializer = RegisterSerializer(self.queryset, many=True)
         return Response(data=serializer.data, status=status.HTTP_200_OK)
-    
-class ConversationViewSet(ViewSet):
+
+# MessageFilter
+# django-filters
+class ConversationViewSet(ViewSet, ListAPIView):
     http_method_names = ['get', 'post']
     permission_classes = [IsParticipantOfConversation]
     serializer_class = ConversationSerializer
     queryset = Conversation.objects.all()
+    pagination_class = CustomPagination
 
     def list(self, request):
         data = Conversation.objects.filter(participants_id=request.user)

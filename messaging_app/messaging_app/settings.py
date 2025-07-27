@@ -122,6 +122,8 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
         'chats.permissions.IsParticipantOfConversation',
     ),
+    'DEFAULT_PAGINATION_CLASS': 'chats.pagination.CustomPagination',
+    'PAGE_SIZE': 20
 }
 
 AUTH_USER_MODEL = env('AUTH_USER_MODEL')
