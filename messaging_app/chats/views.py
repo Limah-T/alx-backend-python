@@ -9,9 +9,9 @@ from rest_framework_simplejwt.token_blacklist.models import BlacklistedToken, Ou
 from django.contrib.auth import login
 from .models import User, Message, Conversation
 from .serializers import RegisterSerializer, MessageSerializer, ConversationSerializer
+from .permissions import IsParticipantOfConversation
 from datetime import datetime
 
-    
 class ALLUserViewset(ViewSet):
     http_method_names = ['get']
     queryset = User.objects.all()     
@@ -22,6 +22,7 @@ class ALLUserViewset(ViewSet):
     
 class ConversationViewSet(ViewSet):
     http_method_names = ['get', 'post']
+    permission_classes = [IsParticipantOfConversation]
     serializer_class = ConversationSerializer
     queryset = Conversation.objects.all()
 
