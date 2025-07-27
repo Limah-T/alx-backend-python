@@ -38,6 +38,7 @@ class ConversationViewSet(ViewSet):
             return Response(data=serializer.validated_data, status=status.HTTP_200_OK)
         
 # ["filters"]
+#  ["conversation_id", "HTTP_403_FORBIDDEN"]
 class MessageViewSet(ViewSet):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
