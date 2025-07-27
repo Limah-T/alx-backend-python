@@ -2,7 +2,6 @@ from rest_framework import serializers
 from dj_rest_auth.serializers import LoginSerializer
 from .models import User, Conversation, Message
 
-
 class RegisterSerializer(serializers.Serializer):
     username = serializers.CharField(required=False, allow_blank=True)
     first_name = serializers.CharField(max_length=255, min_length=3)
@@ -34,6 +33,8 @@ class ConversationSerializer(serializers.Serializer):
     participant = serializers.UUIDField(format="hex_verbose", read_only=True)
     created_at = serializers.DateTimeField(read_only=True)
     message = MessageSerializer()
+
+    
 
 
     

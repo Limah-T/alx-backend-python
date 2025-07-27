@@ -13,8 +13,6 @@ from datetime import datetime
 
     
 class ALLUserViewset(ViewSet):
-    authentication_classes = [JWTAuthentication]
-    permission_classes = [IsAuthenticated]
     http_method_names = ['get']
     queryset = User.objects.all()     
     
@@ -23,8 +21,6 @@ class ALLUserViewset(ViewSet):
         return Response(data=serializer.data, status=status.HTTP_200_OK)
     
 class ConversationViewSet(ViewSet):
-    authentication_classes = [JWTAuthentication]
-    permission_classes = [IsAuthenticated]
     http_method_names = ['get', 'post']
     serializer_class = ConversationSerializer
     queryset = Conversation.objects.all()
