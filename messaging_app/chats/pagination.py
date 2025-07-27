@@ -1,4 +1,5 @@
 from rest_framework.pagination import PageNumberPagination
+["page.paginator.count", "20"]
 
 class CustomPagination(PageNumberPagination):
     page_size = 1

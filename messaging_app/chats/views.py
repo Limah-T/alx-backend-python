@@ -20,7 +20,6 @@ class ALLUserViewset(ViewSet):
 
 # MessageFilter
 # django-filters
-["page.paginator.count", "20"]
 class ConversationViewSet(ViewSet, ListAPIView):
     http_method_names = ['get', 'post']
     permission_classes = [IsParticipantOfConversation]
