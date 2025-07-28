@@ -16,3 +16,29 @@ ERROR 2025-07-28 15:23:04,319 basehttp 20372 17180 "GET /api/conversations/ HTTP
 INFO 2025-07-28 15:23:10,249 autoreload 20372 26996 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-Middleware-0x03\chats\middleware.py changed, reloading.
 INFO 2025-07-28 15:23:10,904 autoreload 19048 9608 Watching for file changes with StatReloader
 INFO 2025-07-28 15:23:12,644 basehttp 19048 17632 "GET /api/conversations/ HTTP/1.1" 200 539
+INFO 2025-07-28 15:43:48,173 autoreload 16920 1192 Watching for file changes with StatReloader
+INFO 2025-07-28 15:43:52,705 basehttp 16920 22980 "GET /api/conversations/ HTTP/1.1" 200 539
+INFO 2025-07-28 15:44:40,432 autoreload 16920 1192 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-Middleware-0x03\chats\middleware.py changed, reloading.
+INFO 2025-07-28 15:44:41,321 autoreload 12040 4148 Watching for file changes with StatReloader
+INFO 2025-07-28 15:44:43,284 autoreload 12040 4148 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-Middleware-0x03\chats\middleware.py changed, reloading.
+INFO 2025-07-28 15:44:44,076 autoreload 25840 27168 Watching for file changes with StatReloader
+INFO 2025-07-28 15:46:07,591 autoreload 25840 27168 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-Middleware-0x03\chats\middleware.py changed, reloading.
+INFO 2025-07-28 15:46:08,481 autoreload 13912 10636 Watching for file changes with StatReloader
+INFO 2025-07-28 15:46:10,476 autoreload 13912 10636 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-Middleware-0x03\chats\middleware.py changed, reloading.
+INFO 2025-07-28 15:46:11,246 autoreload 28340 7688 Watching for file changes with StatReloader
+INFO 2025-07-28 15:46:14,352 autoreload 28340 7688 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-Middleware-0x03\chats\middleware.py changed, reloading.
+INFO 2025-07-28 15:46:15,171 autoreload 23240 28240 Watching for file changes with StatReloader
+INFO 2025-07-28 15:46:19,216 autoreload 23240 28240 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-Middleware-0x03\chats\middleware.py changed, reloading.
+INFO 2025-07-28 15:46:19,949 autoreload 24312 12780 Watching for file changes with StatReloader
+INFO 2025-07-28 15:46:22,821 autoreload 24312 12780 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-Middleware-0x03\chats\middleware.py changed, reloading.
+INFO 2025-07-28 15:46:23,568 autoreload 15628 28128 Watching for file changes with StatReloader
+INFO 2025-07-28 15:46:25,433 autoreload 15628 28128 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-Middleware-0x03\chats\middleware.py changed, reloading.
+INFO 2025-07-28 15:46:26,182 autoreload 10604 13604 Watching for file changes with StatReloader
+INFO 2025-07-28 15:46:54,965 autoreload 10604 13604 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-Middleware-0x03\chats\middleware.py changed, reloading.
+INFO 2025-07-28 15:46:55,774 autoreload 20204 10156 Watching for file changes with StatReloader
+INFO 2025-07-28 15:46:57,936 autoreload 20204 10156 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-Middleware-0x03\chats\middleware.py changed, reloading.
+INFO 2025-07-28 15:46:58,640 autoreload 23288 8896 Watching for file changes with StatReloader
+INFO 2025-07-28 15:47:05,460 basehttp 23288 27848 "GET /api/conversations/ HTTP/1.1" 200 539
+INFO 2025-07-28 15:47:34,749 autoreload 23288 8896 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-Middleware-0x03\chats\middleware.py changed, reloading.
+INFO 2025-07-28 15:47:35,495 autoreload 10224 4244 Watching for file changes with StatReloader
+INFO 2025-07-28 15:47:39,979 basehttp 10224 8824 "GET /api/conversations/ HTTP/1.1" 200 539

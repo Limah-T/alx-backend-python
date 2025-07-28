@@ -56,6 +56,7 @@ MIDDLEWARE = [
      
     # Custom Middleware
     'chats.middleware.RequestLoggingMiddleware', 
+    'chats.middleware.RestrictMessagingHoursMiddleware',
 ]
 
 ROOT_URLCONF = 'Django-Middleware-0x03.urls'
