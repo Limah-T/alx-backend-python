@@ -20,7 +20,7 @@ class RequestLoggingMiddleware:
 from datetime import datetime, time
 from django.http import HttpResponseForbidden
 
-class RestrictMessagingHoursMiddleware:
+class RestrictAccessByTimeMiddleware:
     def __init__(self, get_response):
         self.get_response = get_response
 
