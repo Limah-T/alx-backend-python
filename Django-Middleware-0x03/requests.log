@@ -695,3 +695,22 @@ INFO 2025-07-29 10:04:09,841 basehttp 19584 25996 "GET /api/conversations/ HTTP/
 INFO 2025-07-29 10:04:12,458 basehttp 19584 25996 "GET /api/conversations/ HTTP/1.1" 200 539
 WARNING 2025-07-29 10:04:15,207 log 19584 25996 Too Many Requests: /api/conversations/
 WARNING 2025-07-29 10:04:15,209 basehttp 19584 25996 "GET /api/conversations/ HTTP/1.1" 429 59
+INFO 2025-07-29 10:25:12,135 autoreload 19736 14168 Watching for file changes with StatReloader
+INFO 2025-07-29 10:25:43,873 basehttp 19736 15380 "GET /api/conversations/ HTTP/1.1" 200 539
+INFO 2025-07-29 10:25:45,690 basehttp 19736 15380 "GET /api/conversations/ HTTP/1.1" 200 539
+INFO 2025-07-29 10:25:47,611 basehttp 19736 15380 "GET /api/conversations/ HTTP/1.1" 200 539
+INFO 2025-07-29 10:25:49,278 basehttp 19736 15380 "GET /api/conversations/ HTTP/1.1" 200 539
+INFO 2025-07-29 10:25:50,999 basehttp 19736 15380 "GET /api/conversations/ HTTP/1.1" 200 539
+WARNING 2025-07-29 10:25:52,466 log 19736 15380 Too Many Requests: /api/conversations/
+WARNING 2025-07-29 10:25:52,467 basehttp 19736 15380 "GET /api/conversations/ HTTP/1.1" 429 59
+INFO 2025-07-29 10:26:04,810 autoreload 19736 14168 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-Middleware-0x03\chats\middleware.py changed, reloading.
+INFO 2025-07-29 10:26:06,249 autoreload 2372 26824 Watching for file changes with StatReloader
+INFO 2025-07-29 10:26:18,350 autoreload 2372 26824 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-Middleware-0x03\chats\middleware.py changed, reloading.
+INFO 2025-07-29 10:26:19,022 autoreload 29300 25832 Watching for file changes with StatReloader
+INFO 2025-07-29 10:26:21,162 basehttp 29300 24424 "GET /api/conversations/ HTTP/1.1" 200 539
+INFO 2025-07-29 10:26:22,518 basehttp 29300 24424 "GET /api/conversations/ HTTP/1.1" 200 539
+INFO 2025-07-29 10:26:23,669 basehttp 29300 24424 "GET /api/conversations/ HTTP/1.1" 200 539
+INFO 2025-07-29 10:26:25,107 basehttp 29300 24424 "GET /api/conversations/ HTTP/1.1" 200 539
+INFO 2025-07-29 10:26:26,132 basehttp 29300 24424 "GET /api/conversations/ HTTP/1.1" 200 539
+WARNING 2025-07-29 10:26:27,327 log 29300 24424 Too Many Requests: /api/conversations/
+WARNING 2025-07-29 10:26:27,328 basehttp 29300 24424 "GET /api/conversations/ HTTP/1.1" 429 81
