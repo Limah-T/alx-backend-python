@@ -1,0 +1,1654 @@
+INFO 2025-07-29 15:13:11,058 autoreload 24024 10248 Watching for file changes with StatReloader
+WARNING 2025-07-29 15:13:25,547 log 24024 3144 Bad Request: /api/users/
+WARNING 2025-07-29 15:13:25,548 basehttp 24024 3144 "POST /api/users/ HTTP/1.1" 400 120
+INFO 2025-07-29 15:14:03,902 basehttp 24024 3144 "POST /api/users/ HTTP/1.1" 200 10
+INFO 2025-07-29 15:14:29,900 autoreload 24024 10248 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 15:14:31,208 autoreload 14420 11308 Watching for file changes with StatReloader
+ERROR 2025-07-29 15:14:32,553 log 14420 3780 Internal Server Error: /api/users/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 991, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+    ...<2 lines>...
+    )
+TypeError: User() got unexpected keyword arguments: 'password1', 'password2'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py", line 17, in create
+    serializer.save()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 210, in save
+    self.instance = self.create(validated_data)
+                    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py", line 21, in create
+    return super().create(validated_data)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 1010, in create
+    raise TypeError(msg)
+TypeError: Got a `TypeError` when calling `User.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `User.objects.create()`. You may need to make the field read-only, or override the UserSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 991, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+    ...<2 lines>...
+    )
+TypeError: User() got unexpected keyword arguments: 'password1', 'password2'
+
+ERROR 2025-07-29 15:14:32,559 basehttp 14420 3780 "POST /api/users/ HTTP/1.1" 500 169883
+INFO 2025-07-29 15:15:01,048 autoreload 14420 11308 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:15:01,862 autoreload 22664 17704 Watching for file changes with StatReloader
+INFO 2025-07-29 15:15:04,878 autoreload 22664 17704 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:15:05,513 autoreload 8724 23156 Watching for file changes with StatReloader
+INFO 2025-07-29 15:15:07,835 basehttp 8724 13632 "POST /api/users/ HTTP/1.1" 200 10
+INFO 2025-07-29 15:16:16,013 autoreload 8724 23156 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:16:16,646 autoreload 31772 27164 Watching for file changes with StatReloader
+INFO 2025-07-29 15:16:32,254 autoreload 31772 27164 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:16:32,778 autoreload 31304 20548 Watching for file changes with StatReloader
+INFO 2025-07-29 15:16:42,251 autoreload 31304 20548 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:16:42,940 autoreload 12320 368 Watching for file changes with StatReloader
+INFO 2025-07-29 15:16:48,310 autoreload 12320 368 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:16:49,278 autoreload 30492 30560 Watching for file changes with StatReloader
+INFO 2025-07-29 15:16:51,033 autoreload 30492 30560 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:16:51,640 autoreload 1224 20976 Watching for file changes with StatReloader
+INFO 2025-07-29 15:16:57,661 autoreload 1224 20976 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:16:58,161 autoreload 30236 24824 Watching for file changes with StatReloader
+INFO 2025-07-29 15:17:05,340 autoreload 30236 24824 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:17:06,069 autoreload 16752 5776 Watching for file changes with StatReloader
+INFO 2025-07-29 15:17:13,277 autoreload 16752 5776 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:17:13,901 autoreload 23556 29544 Watching for file changes with StatReloader
+INFO 2025-07-29 15:17:22,027 autoreload 23556 29544 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:17:22,735 autoreload 5712 25388 Watching for file changes with StatReloader
+INFO 2025-07-29 15:17:30,016 autoreload 5712 25388 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:17:30,692 autoreload 12128 31180 Watching for file changes with StatReloader
+INFO 2025-07-29 15:17:34,838 autoreload 12128 31180 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:17:35,580 autoreload 29448 19300 Watching for file changes with StatReloader
+INFO 2025-07-29 15:17:41,018 autoreload 29448 19300 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:17:41,587 autoreload 28240 27244 Watching for file changes with StatReloader
+INFO 2025-07-29 15:17:54,423 autoreload 28240 27244 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:17:55,051 autoreload 27228 24312 Watching for file changes with StatReloader
+INFO 2025-07-29 15:18:06,877 autoreload 27228 24312 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:18:07,777 autoreload 22652 25792 Watching for file changes with StatReloader
+INFO 2025-07-29 15:18:09,581 autoreload 22652 25792 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:18:10,315 autoreload 27800 30428 Watching for file changes with StatReloader
+INFO 2025-07-29 15:18:13,262 autoreload 27800 30428 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:18:13,873 autoreload 30848 23368 Watching for file changes with StatReloader
+INFO 2025-07-29 15:18:19,831 autoreload 30848 23368 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:18:20,553 autoreload 7296 24528 Watching for file changes with StatReloader
+INFO 2025-07-29 15:18:22,211 autoreload 7296 24528 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:18:22,864 autoreload 200 17048 Watching for file changes with StatReloader
+INFO 2025-07-29 15:18:42,724 autoreload 200 17048 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:18:43,406 autoreload 31064 32664 Watching for file changes with StatReloader
+INFO 2025-07-29 15:18:45,562 autoreload 31064 32664 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:18:46,291 autoreload 21340 30488 Watching for file changes with StatReloader
+INFO 2025-07-29 15:18:58,054 autoreload 21340 30488 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:18:58,663 autoreload 31580 7828 Watching for file changes with StatReloader
+INFO 2025-07-29 15:19:02,068 autoreload 31580 7828 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:19:02,677 autoreload 1744 32512 Watching for file changes with StatReloader
+INFO 2025-07-29 15:19:10,196 autoreload 1744 32512 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:19:10,886 autoreload 4520 23272 Watching for file changes with StatReloader
+INFO 2025-07-29 15:19:17,322 autoreload 4520 23272 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:19:17,995 autoreload 15236 14148 Watching for file changes with StatReloader
+INFO 2025-07-29 15:19:25,343 autoreload 15236 14148 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:19:26,196 autoreload 20980 2180 Watching for file changes with StatReloader
+INFO 2025-07-29 15:19:28,429 autoreload 20980 2180 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:19:29,200 autoreload 8200 32416 Watching for file changes with StatReloader
+INFO 2025-07-29 15:19:38,819 autoreload 8200 32416 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:19:39,422 autoreload 29080 25412 Watching for file changes with StatReloader
+ERROR 2025-07-29 15:20:07,281 log 29080 6060 Internal Server Error: /api/users/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py", line 15, in create
+    serializer.is_valid(raise_exception=True)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 225, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 444, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 497, in to_internal_value
+    for field in fields:
+                 ^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 380, in _writable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 1081, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 1177, in get_field_names
+    assert field_name in fields, (
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: The field 'password2' was declared on serializer UserSerializer, but has not been included in the 'fields' option.
+ERROR 2025-07-29 15:20:07,290 basehttp 29080 6060 "POST /api/users/ HTTP/1.1" 500 155034
+INFO 2025-07-29 15:20:23,801 autoreload 29080 25412 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:20:24,844 autoreload 20548 32024 Watching for file changes with StatReloader
+INFO 2025-07-29 15:20:28,252 autoreload 20548 32024 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:20:28,931 autoreload 18756 28320 Watching for file changes with StatReloader
+INFO 2025-07-29 15:20:33,181 autoreload 18756 28320 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:20:34,034 autoreload 26256 30152 Watching for file changes with StatReloader
+ERROR 2025-07-29 15:20:37,665 log 26256 15708 Internal Server Error: /api/users/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py", line 15, in create
+    serializer.is_valid(raise_exception=True)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 225, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 447, in run_validation
+    value = self.validate(value)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py", line 17, in validate
+    if attrs.get('password1') < 8 or attrs.get('password2') < 8:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'str' and 'int'
+ERROR 2025-07-29 15:20:37,671 basehttp 26256 15708 "POST /api/users/ HTTP/1.1" 500 123157
+INFO 2025-07-29 15:20:51,677 autoreload 26256 30152 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:20:52,492 autoreload 14856 31488 Watching for file changes with StatReloader
+INFO 2025-07-29 15:20:54,438 autoreload 14856 31488 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:20:55,140 autoreload 9004 30792 Watching for file changes with StatReloader
+INFO 2025-07-29 15:20:58,288 autoreload 9004 30792 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:20:59,077 autoreload 14340 20980 Watching for file changes with StatReloader
+INFO 2025-07-29 15:21:00,801 autoreload 14340 20980 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:21:01,489 autoreload 3688 25336 Watching for file changes with StatReloader
+WARNING 2025-07-29 15:21:03,878 log 3688 32288 Bad Request: /api/users/
+WARNING 2025-07-29 15:21:03,879 basehttp 3688 32288 "POST /api/users/ HTTP/1.1" 400 52
+WARNING 2025-07-29 15:21:13,534 log 3688 32288 Bad Request: /api/users/
+WARNING 2025-07-29 15:21:13,535 basehttp 3688 32288 "POST /api/users/ HTTP/1.1" 400 52
+WARNING 2025-07-29 15:21:21,465 log 3688 32288 Bad Request: /api/users/
+WARNING 2025-07-29 15:21:21,467 basehttp 3688 32288 "POST /api/users/ HTTP/1.1" 400 52
+INFO 2025-07-29 15:22:14,158 autoreload 3688 25336 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:22:15,262 autoreload 30044 9648 Watching for file changes with StatReloader
+WARNING 2025-07-29 15:22:16,795 log 30044 18756 Bad Request: /api/users/
+WARNING 2025-07-29 15:22:16,796 basehttp 30044 18756 "POST /api/users/ HTTP/1.1" 400 36
+WARNING 2025-07-29 15:22:25,067 log 30044 18756 Bad Request: /api/users/
+WARNING 2025-07-29 15:22:25,067 basehttp 30044 18756 "POST /api/users/ HTTP/1.1" 400 36
+ERROR 2025-07-29 15:22:35,033 log 30044 18756 Internal Server Error: /api/users/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 991, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+    ...<2 lines>...
+    )
+TypeError: User() got unexpected keyword arguments: 'password2'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py", line 17, in create
+    serializer.save()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 210, in save
+    self.instance = self.create(validated_data)
+                    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py", line 30, in create
+    return super().create(validated_data)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 1010, in create
+    raise TypeError(msg)
+TypeError: Got a `TypeError` when calling `User.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `User.objects.create()`. You may need to make the field read-only, or override the UserSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 991, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+    ...<2 lines>...
+    )
+TypeError: User() got unexpected keyword arguments: 'password2'
+
+ERROR 2025-07-29 15:22:35,039 basehttp 30044 18756 "POST /api/users/ HTTP/1.1" 500 169405
+INFO 2025-07-29 15:22:51,338 autoreload 30044 9648 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:22:52,153 autoreload 20512 31084 Watching for file changes with StatReloader
+INFO 2025-07-29 15:22:54,348 autoreload 20512 31084 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:22:55,043 autoreload 1504 3848 Watching for file changes with StatReloader
+INFO 2025-07-29 15:22:58,198 autoreload 1504 3848 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:22:58,942 autoreload 14416 31176 Watching for file changes with StatReloader
+INFO 2025-07-29 15:23:01,990 autoreload 14416 31176 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:23:02,823 autoreload 4780 30020 Watching for file changes with StatReloader
+ERROR 2025-07-29 15:23:08,003 log 4780 24592 Internal Server Error: /api/users/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py", line 15, in create
+    serializer.is_valid(raise_exception=True)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 225, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 444, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 497, in to_internal_value
+    for field in fields:
+                 ^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 380, in _writable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 1081, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 1177, in get_field_names
+    assert field_name in fields, (
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: The field 'password' was declared on serializer UserSerializer, but has not been included in the 'fields' option.
+ERROR 2025-07-29 15:23:08,013 basehttp 4780 24592 "POST /api/users/ HTTP/1.1" 500 155102
+INFO 2025-07-29 15:23:20,683 autoreload 4780 30020 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:23:21,402 autoreload 28208 16664 Watching for file changes with StatReloader
+WARNING 2025-07-29 15:23:23,878 log 28208 9248 Bad Request: /api/users/
+WARNING 2025-07-29 15:23:23,879 basehttp 28208 9248 "POST /api/users/ HTTP/1.1" 400 40
+WARNING 2025-07-29 15:23:29,697 log 28208 9248 Bad Request: /api/users/
+WARNING 2025-07-29 15:23:29,698 basehttp 28208 9248 "POST /api/users/ HTTP/1.1" 400 36
+INFO 2025-07-29 15:23:33,800 basehttp 28208 9248 "POST /api/users/ HTTP/1.1" 200 10
+INFO 2025-07-29 15:24:10,611 autoreload 28208 16664 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:24:11,918 autoreload 19688 4008 Watching for file changes with StatReloader
+INFO 2025-07-29 15:24:18,381 autoreload 19688 4008 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:24:19,118 autoreload 27240 12296 Watching for file changes with StatReloader
+INFO 2025-07-29 15:24:26,433 autoreload 27240 12296 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:24:27,073 autoreload 9448 6252 Watching for file changes with StatReloader
+INFO 2025-07-29 15:24:54,346 autoreload 9448 6252 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:24:55,345 autoreload 15316 27496 Watching for file changes with StatReloader
+INFO 2025-07-29 15:24:59,982 autoreload 15316 27496 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:25:00,963 autoreload 3316 16332 Watching for file changes with StatReloader
+INFO 2025-07-29 15:25:07,297 autoreload 3316 16332 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:25:08,540 autoreload 30796 1032 Watching for file changes with StatReloader
+INFO 2025-07-29 15:25:21,281 autoreload 30796 1032 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:25:21,935 autoreload 13988 31860 Watching for file changes with StatReloader
+INFO 2025-07-29 15:25:30,248 autoreload 13988 31860 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:25:30,863 autoreload 17260 7156 Watching for file changes with StatReloader
+INFO 2025-07-29 15:25:33,901 autoreload 17260 7156 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:25:34,747 autoreload 25388 30392 Watching for file changes with StatReloader
+INFO 2025-07-29 15:25:38,809 autoreload 25388 30392 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:25:39,527 autoreload 24280 7976 Watching for file changes with StatReloader
+INFO 2025-07-29 15:25:44,784 autoreload 24280 7976 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:25:45,400 autoreload 19176 23476 Watching for file changes with StatReloader
+INFO 2025-07-29 15:26:00,445 autoreload 19176 23476 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:26:01,191 autoreload 30184 26712 Watching for file changes with StatReloader
+INFO 2025-07-29 15:26:07,682 autoreload 30184 26712 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:26:08,416 autoreload 28040 7096 Watching for file changes with StatReloader
+INFO 2025-07-29 15:26:11,911 autoreload 28040 7096 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:26:12,623 autoreload 30460 30268 Watching for file changes with StatReloader
+INFO 2025-07-29 15:26:19,344 autoreload 30460 30268 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:26:20,055 autoreload 31688 3504 Watching for file changes with StatReloader
+INFO 2025-07-29 15:26:22,139 autoreload 31688 3504 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:26:22,859 autoreload 10076 22832 Watching for file changes with StatReloader
+INFO 2025-07-29 15:26:27,163 autoreload 10076 22832 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:26:27,873 autoreload 22628 28644 Watching for file changes with StatReloader
+INFO 2025-07-29 15:26:29,872 autoreload 22628 28644 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:26:30,534 autoreload 30952 30700 Watching for file changes with StatReloader
+INFO 2025-07-29 15:26:45,606 autoreload 30952 30700 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:26:46,279 autoreload 11848 1876 Watching for file changes with StatReloader
+INFO 2025-07-29 15:26:53,589 autoreload 11848 1876 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:26:54,347 autoreload 20072 19424 Watching for file changes with StatReloader
+INFO 2025-07-29 15:27:03,985 autoreload 20072 19424 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:27:04,811 autoreload 27480 28648 Watching for file changes with StatReloader
+INFO 2025-07-29 15:27:13,862 autoreload 27480 28648 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:27:14,706 autoreload 19664 28500 Watching for file changes with StatReloader
+INFO 2025-07-29 15:27:18,176 autoreload 19664 28500 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:27:18,786 autoreload 29332 23288 Watching for file changes with StatReloader
+INFO 2025-07-29 15:27:28,350 autoreload 29332 23288 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:27:29,047 autoreload 31532 18836 Watching for file changes with StatReloader
+INFO 2025-07-29 15:27:33,221 autoreload 31532 18836 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:27:33,922 autoreload 7316 22004 Watching for file changes with StatReloader
+INFO 2025-07-29 15:27:39,087 autoreload 7316 22004 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:27:40,110 autoreload 32108 11204 Watching for file changes with StatReloader
+INFO 2025-07-29 15:27:45,514 autoreload 32108 11204 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:27:46,209 autoreload 22180 15080 Watching for file changes with StatReloader
+INFO 2025-07-29 15:28:17,072 autoreload 22180 15080 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:28:17,755 autoreload 6140 5824 Watching for file changes with StatReloader
+INFO 2025-07-29 15:28:33,127 autoreload 6140 5824 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:28:34,215 autoreload 24516 15464 Watching for file changes with StatReloader
+INFO 2025-07-29 15:28:37,729 autoreload 24516 15464 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:28:38,455 autoreload 4932 32012 Watching for file changes with StatReloader
+INFO 2025-07-29 15:28:54,970 autoreload 4932 32012 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 15:28:56,006 autoreload 27084 15044 Watching for file changes with StatReloader
+INFO 2025-07-29 15:28:58,463 basehttp 27084 29332 "POST /api/users/ HTTP/1.1" 200 71
+INFO 2025-07-29 15:29:20,984 autoreload 27084 15044 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:29:21,818 autoreload 8580 28680 Watching for file changes with StatReloader
+INFO 2025-07-29 15:29:27,823 autoreload 8580 28680 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:29:28,493 autoreload 31260 18252 Watching for file changes with StatReloader
+INFO 2025-07-29 15:29:32,593 autoreload 31260 18252 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:29:33,435 autoreload 3156 28732 Watching for file changes with StatReloader
+INFO 2025-07-29 15:29:43,041 autoreload 3156 28732 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:29:43,836 autoreload 31616 30264 Watching for file changes with StatReloader
+INFO 2025-07-29 15:29:46,862 autoreload 31616 30264 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:29:47,717 autoreload 29280 29956 Watching for file changes with StatReloader
+INFO 2025-07-29 15:29:52,986 autoreload 29280 29956 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:29:53,718 autoreload 29108 828 Watching for file changes with StatReloader
+INFO 2025-07-29 15:30:00,509 autoreload 29108 828 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:30:01,412 autoreload 16844 31376 Watching for file changes with StatReloader
+INFO 2025-07-29 15:30:14,483 basehttp 16844 30216 "POST /api/users/ HTTP/1.1" 200 71
+INFO 2025-07-29 15:30:53,833 autoreload 16844 31376 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:30:54,629 autoreload 8760 26256 Watching for file changes with StatReloader
+WARNING 2025-07-29 15:30:57,618 log 8760 6440 Bad Request: /api/users/
+WARNING 2025-07-29 15:30:57,619 basehttp 8760 6440 "POST /api/users/ HTTP/1.1" 400 45
+INFO 2025-07-29 15:31:09,023 autoreload 8760 26256 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:31:09,838 autoreload 22732 31652 Watching for file changes with StatReloader
+INFO 2025-07-29 15:31:12,425 autoreload 22732 31652 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:31:13,183 autoreload 1204 6060 Watching for file changes with StatReloader
+INFO 2025-07-29 15:31:15,704 autoreload 1204 6060 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:31:16,873 autoreload 19308 24344 Watching for file changes with StatReloader
+WARNING 2025-07-29 15:31:18,271 log 19308 12700 Bad Request: /api/users/
+WARNING 2025-07-29 15:31:18,272 basehttp 19308 12700 "POST /api/users/ HTTP/1.1" 400 49
+INFO 2025-07-29 15:31:29,050 autoreload 19308 24344 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:31:29,991 autoreload 30104 6256 Watching for file changes with StatReloader
+WARNING 2025-07-29 15:31:38,792 log 30104 6140 Bad Request: /api/users/
+WARNING 2025-07-29 15:31:38,793 basehttp 30104 6140 "POST /api/users/ HTTP/1.1" 400 49
+INFO 2025-07-29 15:31:45,027 autoreload 30104 6256 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:31:45,866 autoreload 20936 13392 Watching for file changes with StatReloader
+INFO 2025-07-29 15:32:15,959 basehttp 20936 10424 "POST /api/users/ HTTP/1.1" 200 74
+WARNING 2025-07-29 15:32:19,554 log 20936 10424 Bad Request: /api/users/
+WARNING 2025-07-29 15:32:19,555 basehttp 20936 10424 "POST /api/users/ HTTP/1.1" 400 49
+WARNING 2025-07-29 15:32:25,076 log 20936 10424 Bad Request: /api/users/
+WARNING 2025-07-29 15:32:25,084 basehttp 20936 10424 "POST /api/users/ HTTP/1.1" 400 49
+WARNING 2025-07-29 15:32:30,120 log 20936 10424 Bad Request: /api/users/
+WARNING 2025-07-29 15:32:30,121 basehttp 20936 10424 "POST /api/users/ HTTP/1.1" 400 36
+INFO 2025-07-29 15:32:56,518 autoreload 20936 13392 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:32:57,585 autoreload 21564 5748 Watching for file changes with StatReloader
+INFO 2025-07-29 15:33:06,903 autoreload 21564 5748 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:33:07,905 autoreload 29480 26516 Watching for file changes with StatReloader
+INFO 2025-07-29 15:33:13,230 autoreload 29480 26516 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:33:13,911 autoreload 20660 22904 Watching for file changes with StatReloader
+INFO 2025-07-29 15:34:14,352 autoreload 20660 22904 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:34:15,886 autoreload 2448 30920 Watching for file changes with StatReloader
+INFO 2025-07-29 15:34:19,507 autoreload 2448 30920 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:34:20,292 autoreload 30048 26184 Watching for file changes with StatReloader
+INFO 2025-07-29 15:34:22,469 autoreload 30048 26184 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 15:34:23,196 autoreload 12016 29428 Watching for file changes with StatReloader
+INFO 2025-07-29 15:57:58,061 autoreload 22108 26032 Watching for file changes with StatReloader
+INFO 2025-07-29 15:58:28,552 autoreload 22108 26032 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 15:58:29,343 autoreload 25432 31032 Watching for file changes with StatReloader
+INFO 2025-07-29 15:58:32,145 autoreload 25432 31032 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 15:58:32,746 autoreload 20448 28900 Watching for file changes with StatReloader
+INFO 2025-07-29 15:58:40,711 autoreload 20448 28900 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 15:58:41,339 autoreload 29720 11776 Watching for file changes with StatReloader
+INFO 2025-07-29 15:58:44,552 autoreload 29720 11776 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 15:58:45,411 autoreload 26292 20724 Watching for file changes with StatReloader
+INFO 2025-07-29 15:58:49,633 autoreload 26292 20724 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 15:58:50,223 autoreload 13188 26004 Watching for file changes with StatReloader
+WARNING 2025-07-29 16:00:20,730 log 13188 7600 Bad Request: /api/messages/
+WARNING 2025-07-29 16:00:20,733 basehttp 13188 7600 "POST /api/messages/ HTTP/1.1" 400 79
+WARNING 2025-07-29 16:00:52,070 log 13188 7600 Bad Request: /api/messages/
+WARNING 2025-07-29 16:00:52,072 basehttp 13188 7600 "POST /api/messages/ HTTP/1.1" 400 45
+INFO 2025-07-29 16:00:58,448 basehttp 13188 7600 "POST /api/messages/ HTTP/1.1" 200 10
+INFO 2025-07-29 16:01:14,727 basehttp 13188 7600 "POST /api/messages/ HTTP/1.1" 200 10
+INFO 2025-07-29 16:01:29,683 autoreload 13188 26004 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:01:30,760 autoreload 10152 5196 Watching for file changes with StatReloader
+INFO 2025-07-29 16:01:36,202 autoreload 10152 5196 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:01:36,825 autoreload 31760 19372 Watching for file changes with StatReloader
+INFO 2025-07-29 16:01:43,140 autoreload 31760 19372 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:01:43,743 autoreload 12428 23044 Watching for file changes with StatReloader
+INFO 2025-07-29 16:01:47,838 autoreload 12428 23044 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:01:48,410 autoreload 28544 32260 Watching for file changes with StatReloader
+INFO 2025-07-29 16:01:55,831 autoreload 28544 32260 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:01:56,568 autoreload 21200 30852 Watching for file changes with StatReloader
+INFO 2025-07-29 16:02:00,915 autoreload 21200 30852 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:02:01,714 autoreload 4436 10252 Watching for file changes with StatReloader
+INFO 2025-07-29 16:02:04,633 basehttp 4436 28424 "POST /api/messages/ HTTP/1.1" 200 10
+INFO 2025-07-29 16:02:16,886 autoreload 4436 10252 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:02:17,645 autoreload 20492 3760 Watching for file changes with StatReloader
+INFO 2025-07-29 16:02:20,584 basehttp 20492 31084 "POST /api/messages/ HTTP/1.1" 200 10
+INFO 2025-07-29 16:03:21,387 basehttp 20492 23568 "POST /api/messages/ HTTP/1.1" 200 10
+INFO 2025-07-29 16:04:43,992 autoreload 20492 3760 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:04:45,335 autoreload 32524 29988 Watching for file changes with StatReloader
+INFO 2025-07-29 16:04:52,187 autoreload 32524 29988 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:04:52,960 autoreload 2076 31964 Watching for file changes with StatReloader
+INFO 2025-07-29 16:04:59,119 autoreload 2076 31964 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:04:59,725 autoreload 19440 12284 Watching for file changes with StatReloader
+INFO 2025-07-29 16:05:04,768 autoreload 19440 12284 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:05:05,356 autoreload 30168 2944 Watching for file changes with StatReloader
+INFO 2025-07-29 16:05:41,653 autoreload 30168 2944 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:05:42,571 autoreload 32056 25376 Watching for file changes with StatReloader
+INFO 2025-07-29 16:05:44,522 autoreload 32056 25376 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:05:45,189 autoreload 14276 24716 Watching for file changes with StatReloader
+INFO 2025-07-29 16:05:46,975 autoreload 14276 24716 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:05:47,751 autoreload 24480 16196 Watching for file changes with StatReloader
+INFO 2025-07-29 16:05:51,805 autoreload 24480 16196 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:05:52,463 autoreload 31268 28392 Watching for file changes with StatReloader
+INFO 2025-07-29 16:05:54,615 autoreload 31268 28392 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:05:55,339 autoreload 11744 25656 Watching for file changes with StatReloader
+INFO 2025-07-29 16:05:57,137 autoreload 11744 25656 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:05:57,859 autoreload 30968 21592 Watching for file changes with StatReloader
+INFO 2025-07-29 16:06:02,200 autoreload 30968 21592 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:06:02,900 autoreload 7204 21868 Watching for file changes with StatReloader
+INFO 2025-07-29 16:06:05,645 basehttp 7204 16460 "POST /api/messages/ HTTP/1.1" 200 10
+INFO 2025-07-29 16:06:16,299 autoreload 7204 21868 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:06:16,999 autoreload 31628 17484 Watching for file changes with StatReloader
+INFO 2025-07-29 16:06:21,332 autoreload 31628 17484 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:06:22,235 autoreload 32452 31644 Watching for file changes with StatReloader
+INFO 2025-07-29 16:06:25,161 basehttp 32452 20984 "POST /api/messages/ HTTP/1.1" 200 10
+INFO 2025-07-29 16:06:33,345 autoreload 32452 31644 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:06:33,978 autoreload 22544 21620 Watching for file changes with StatReloader
+INFO 2025-07-29 16:06:37,256 autoreload 22544 21620 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:06:38,178 autoreload 15684 22712 Watching for file changes with StatReloader
+INFO 2025-07-29 16:06:48,978 autoreload 15684 22712 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\Django-signals_orm-0x04\settings.py changed, reloading.
+INFO 2025-07-29 16:06:49,871 autoreload 1956 31708 Watching for file changes with StatReloader
+INFO 2025-07-29 16:06:55,445 autoreload 1956 31708 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:06:56,266 autoreload 4556 724 Watching for file changes with StatReloader
+INFO 2025-07-29 16:06:57,252 basehttp 4556 25960 "POST /api/messages/ HTTP/1.1" 200 10
+INFO 2025-07-29 16:07:05,044 autoreload 4556 724 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:07:05,903 autoreload 31336 31360 Watching for file changes with StatReloader
+INFO 2025-07-29 16:07:07,243 basehttp 31336 15904 "POST /api/messages/ HTTP/1.1" 200 10
+INFO 2025-07-29 16:07:25,222 basehttp 31336 15904 "POST /api/messages/ HTTP/1.1" 200 10
+INFO 2025-07-29 16:10:56,721 autoreload 31336 31360 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:10:57,920 autoreload 1612 8288 Watching for file changes with StatReloader
+INFO 2025-07-29 16:11:06,142 autoreload 1612 8288 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:11:07,043 autoreload 21544 32408 Watching for file changes with StatReloader
+INFO 2025-07-29 16:11:09,124 autoreload 21544 32408 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:11:09,978 autoreload 24860 12320 Watching for file changes with StatReloader
+INFO 2025-07-29 16:11:15,400 autoreload 24860 12320 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:11:16,070 autoreload 3576 31524 Watching for file changes with StatReloader
+INFO 2025-07-29 16:11:23,417 autoreload 3576 31524 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:11:24,116 autoreload 10188 20512 Watching for file changes with StatReloader
+INFO 2025-07-29 16:11:29,204 autoreload 10188 20512 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:11:29,917 autoreload 1744 14108 Watching for file changes with StatReloader
+INFO 2025-07-29 16:11:40,796 autoreload 1744 14108 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:11:41,619 autoreload 26096 5064 Watching for file changes with StatReloader
+INFO 2025-07-29 16:11:47,754 autoreload 26096 5064 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:11:48,493 autoreload 23120 29908 Watching for file changes with StatReloader
+INFO 2025-07-29 16:11:52,653 autoreload 23120 29908 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:11:53,378 autoreload 3452 31372 Watching for file changes with StatReloader
+INFO 2025-07-29 16:12:02,872 autoreload 3452 31372 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:12:03,599 autoreload 26304 8608 Watching for file changes with StatReloader
+INFO 2025-07-29 16:13:57,539 autoreload 26304 8608 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 16:13:58,808 autoreload 10316 25408 Watching for file changes with StatReloader
+INFO 2025-07-29 16:14:00,965 autoreload 10316 25408 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 16:14:01,712 autoreload 27832 18004 Watching for file changes with StatReloader
+INFO 2025-07-29 16:14:05,843 autoreload 27832 18004 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 16:14:06,712 autoreload 11504 5324 Watching for file changes with StatReloader
+INFO 2025-07-29 16:14:08,913 autoreload 11504 5324 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 16:14:10,089 autoreload 27392 15264 Watching for file changes with StatReloader
+INFO 2025-07-29 16:14:23,932 autoreload 27392 15264 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 16:14:24,902 autoreload 30064 1960 Watching for file changes with StatReloader
+INFO 2025-07-29 16:14:33,957 autoreload 30064 1960 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 16:14:34,674 autoreload 19496 2944 Watching for file changes with StatReloader
+INFO 2025-07-29 16:14:36,684 autoreload 19496 2944 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 16:14:37,738 autoreload 31840 24508 Watching for file changes with StatReloader
+INFO 2025-07-29 16:14:57,251 autoreload 31840 24508 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 16:14:57,915 autoreload 32744 4276 Watching for file changes with StatReloader
+INFO 2025-07-29 16:15:04,852 autoreload 32744 4276 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 16:15:05,630 autoreload 22732 30612 Watching for file changes with StatReloader
+INFO 2025-07-29 16:15:14,473 autoreload 22732 30612 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 16:15:15,184 autoreload 12292 13324 Watching for file changes with StatReloader
+INFO 2025-07-29 16:15:18,786 autoreload 12292 13324 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 16:15:19,414 autoreload 10316 21964 Watching for file changes with StatReloader
+INFO 2025-07-29 16:16:35,406 autoreload 10316 21964 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:16:36,711 autoreload 25412 32088 Watching for file changes with StatReloader
+INFO 2025-07-29 16:16:38,843 autoreload 25412 32088 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:16:39,537 autoreload 13028 15884 Watching for file changes with StatReloader
+INFO 2025-07-29 16:16:45,204 autoreload 13028 15884 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:16:45,914 autoreload 22916 23972 Watching for file changes with StatReloader
+INFO 2025-07-29 16:16:48,032 autoreload 22916 23972 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:16:48,830 autoreload 7508 16996 Watching for file changes with StatReloader
+INFO 2025-07-29 16:16:51,898 autoreload 7508 16996 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:16:52,645 autoreload 7096 23400 Watching for file changes with StatReloader
+INFO 2025-07-29 16:16:56,601 autoreload 7096 23400 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:16:57,198 autoreload 30592 20952 Watching for file changes with StatReloader
+INFO 2025-07-29 16:17:00,687 autoreload 30592 20952 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:17:01,386 autoreload 7728 13548 Watching for file changes with StatReloader
+INFO 2025-07-29 16:17:04,320 autoreload 7728 13548 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:17:04,986 autoreload 32264 29396 Watching for file changes with StatReloader
+INFO 2025-07-29 16:17:09,276 autoreload 32264 29396 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:17:09,932 autoreload 26748 30056 Watching for file changes with StatReloader
+INFO 2025-07-29 16:17:18,747 autoreload 26748 30056 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:17:19,489 autoreload 6840 23752 Watching for file changes with StatReloader
+INFO 2025-07-29 16:17:21,689 autoreload 6840 23752 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:17:22,488 autoreload 29948 32324 Watching for file changes with StatReloader
+INFO 2025-07-29 16:17:24,863 autoreload 29948 32324 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:17:25,632 autoreload 24528 27592 Watching for file changes with StatReloader
+INFO 2025-07-29 16:17:29,606 autoreload 24528 27592 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:17:30,454 autoreload 23148 30480 Watching for file changes with StatReloader
+INFO 2025-07-29 16:18:00,090 autoreload 23148 30480 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:18:00,854 autoreload 4956 11608 Watching for file changes with StatReloader
+INFO 2025-07-29 16:18:14,903 autoreload 4956 11608 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:18:15,741 autoreload 24012 26004 Watching for file changes with StatReloader
+INFO 2025-07-29 16:18:19,164 autoreload 24012 26004 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:18:19,874 autoreload 29208 30224 Watching for file changes with StatReloader
+INFO 2025-07-29 16:18:23,228 autoreload 29208 30224 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:18:24,044 autoreload 2628 19480 Watching for file changes with StatReloader
+INFO 2025-07-29 16:18:33,879 autoreload 2628 19480 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:18:35,625 autoreload 29724 25284 Watching for file changes with StatReloader
+INFO 2025-07-29 16:18:42,054 autoreload 29724 25284 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:18:43,010 autoreload 23396 23012 Watching for file changes with StatReloader
+INFO 2025-07-29 16:18:47,331 autoreload 23396 23012 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:18:48,354 autoreload 11228 29072 Watching for file changes with StatReloader
+WARNING 2025-07-29 16:18:53,553 log 11228 14420 Forbidden: /api/messages/
+WARNING 2025-07-29 16:18:53,554 basehttp 11228 14420 "POST /api/messages/ HTTP/1.1" 403 63
+INFO 2025-07-29 16:19:22,865 autoreload 11228 29072 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\Django-signals_orm-0x04\settings.py changed, reloading.
+INFO 2025-07-29 16:19:23,677 autoreload 24316 16324 Watching for file changes with StatReloader
+INFO 2025-07-29 16:19:28,148 autoreload 24316 16324 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\Django-signals_orm-0x04\settings.py changed, reloading.
+INFO 2025-07-29 16:19:28,930 autoreload 11860 29256 Watching for file changes with StatReloader
+INFO 2025-07-29 16:19:46,424 autoreload 11860 29256 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 16:19:47,225 autoreload 29088 32356 Watching for file changes with StatReloader
+INFO 2025-07-29 16:19:50,277 autoreload 29088 32356 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 16:19:51,014 autoreload 7456 11848 Watching for file changes with StatReloader
+INFO 2025-07-29 16:19:56,425 autoreload 7456 11848 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 16:19:57,284 autoreload 14732 30436 Watching for file changes with StatReloader
+INFO 2025-07-29 16:19:59,433 autoreload 14732 30436 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 16:20:00,366 autoreload 14512 19428 Watching for file changes with StatReloader
+INFO 2025-07-29 16:20:02,479 autoreload 14512 19428 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 16:20:03,202 autoreload 27552 6440 Watching for file changes with StatReloader
+INFO 2025-07-29 16:20:08,721 autoreload 27552 6440 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 16:20:09,432 autoreload 16400 32264 Watching for file changes with StatReloader
+INFO 2025-07-29 16:20:13,966 autoreload 16400 32264 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 16:20:14,786 autoreload 27344 30460 Watching for file changes with StatReloader
+INFO 2025-07-29 16:20:16,750 autoreload 27344 30460 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 16:20:17,468 autoreload 31840 10892 Watching for file changes with StatReloader
+INFO 2025-07-29 16:20:20,305 autoreload 31840 10892 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 16:20:21,004 autoreload 31828 2372 Watching for file changes with StatReloader
+INFO 2025-07-29 16:20:26,297 autoreload 31828 2372 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 16:20:26,913 autoreload 21740 13856 Watching for file changes with StatReloader
+INFO 2025-07-29 16:20:32,229 autoreload 21740 13856 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 16:20:33,356 autoreload 32428 23536 Watching for file changes with StatReloader
+INFO 2025-07-29 16:20:37,431 autoreload 32428 23536 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 16:20:38,154 autoreload 13548 16992 Watching for file changes with StatReloader
+WARNING 2025-07-29 16:20:51,587 log 13548 2284 Unauthorized: /api/messages/
+WARNING 2025-07-29 16:20:51,588 basehttp 13548 2284 "POST /api/messages/ HTTP/1.1" 401 58
+WARNING 2025-07-29 16:20:58,824 log 13548 2284 Bad Request: /api/login/
+WARNING 2025-07-29 16:20:58,826 basehttp 13548 2284 "POST /api/login/ HTTP/1.1" 400 79
+WARNING 2025-07-29 16:21:23,483 log 13548 2284 Bad Request: /api/login/
+WARNING 2025-07-29 16:21:23,484 basehttp 13548 2284 "POST /api/login/ HTTP/1.1" 400 68
+WARNING 2025-07-29 16:21:37,194 log 13548 2284 Bad Request: /api/login/
+WARNING 2025-07-29 16:21:37,195 basehttp 13548 2284 "POST /api/login/ HTTP/1.1" 400 68
+ERROR 2025-07-29 16:21:42,623 log 13548 2284 Internal Server Error: /api/login/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\views\decorators\debug.py", line 143, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\dj_rest_auth\views.py", line 48, in dispatch
+    return super().dispatch(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\dj_rest_auth\views.py", line 127, in post
+    self.login()
+    ~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\dj_rest_auth\views.py", line 70, in login
+    self.access_token, self.refresh_token = jwt_encode(self.user)
+                                            ~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\dj_rest_auth\utils.py", line 14, in jwt_encode
+    refresh = JWTTokenClaimsSerializer.get_token(user)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework_simplejwt\serializers.py", line 66, in get_token
+    return cls.token_class.for_user(user)  # type: ignore
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework_simplejwt\tokens.py", line 339, in for_user
+    token = super().for_user(user)  # type: ignore
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework_simplejwt\tokens.py", line 227, in for_user
+    user_id = getattr(user, api_settings.USER_ID_FIELD)
+AttributeError: 'User' object has no attribute 'user_id'
+ERROR 2025-07-29 16:21:42,635 basehttp 13548 2284 "POST /api/login/ HTTP/1.1" 500 140984
+INFO 2025-07-29 16:22:12,022 autoreload 20244 5728 Watching for file changes with StatReloader
+INFO 2025-07-29 16:22:15,063 basehttp 20244 29276 "POST /api/login/ HTTP/1.1" 200 489
+INFO 2025-07-29 16:22:47,280 autoreload 20244 5728 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:22:48,043 autoreload 31152 31232 Watching for file changes with StatReloader
+INFO 2025-07-29 16:22:57,385 autoreload 31152 31232 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:22:58,140 autoreload 14568 30576 Watching for file changes with StatReloader
+WARNING 2025-07-29 16:23:08,226 log 14568 31404 Unauthorized: /api/messages/
+WARNING 2025-07-29 16:23:08,227 basehttp 14568 31404 "POST /api/messages/ HTTP/1.1" 401 58
+WARNING 2025-07-29 16:23:16,863 log 14568 31404 Unauthorized: /api/messages/
+WARNING 2025-07-29 16:23:16,864 basehttp 14568 31404 "POST /api/messages/ HTTP/1.1" 401 58
+WARNING 2025-07-29 16:23:36,314 log 14568 31404 Unauthorized: /api/messages/
+WARNING 2025-07-29 16:23:36,316 basehttp 14568 31404 "POST /api/messages/ HTTP/1.1" 401 58
+WARNING 2025-07-29 16:24:21,968 log 14568 31404 Unauthorized: /api/messages/
+WARNING 2025-07-29 16:24:21,969 basehttp 14568 31404 "POST /api/messages/ HTTP/1.1" 401 58
+WARNING 2025-07-29 16:24:33,339 log 14568 31404 Unauthorized: /api/messages/
+WARNING 2025-07-29 16:24:33,340 basehttp 14568 31404 "POST /api/messages/ HTTP/1.1" 401 58
+INFO 2025-07-29 16:24:56,428 autoreload 14568 30576 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:24:58,264 autoreload 32052 6372 Watching for file changes with StatReloader
+WARNING 2025-07-29 16:25:01,677 log 32052 26364 Unauthorized: /api/messages/
+WARNING 2025-07-29 16:25:01,678 basehttp 32052 26364 "POST /api/messages/ HTTP/1.1" 401 58
+INFO 2025-07-29 16:25:45,676 autoreload 32052 6372 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\Django-signals_orm-0x04\settings.py changed, reloading.
+INFO 2025-07-29 16:25:46,597 autoreload 32248 4148 Watching for file changes with StatReloader
+WARNING 2025-07-29 16:25:47,882 log 32248 30896 Forbidden: /api/messages/
+WARNING 2025-07-29 16:25:47,883 basehttp 32248 30896 "POST /api/messages/ HTTP/1.1" 403 45
+WARNING 2025-07-29 16:25:53,720 log 32248 30896 Forbidden: /api/messages/
+WARNING 2025-07-29 16:25:53,722 basehttp 32248 30896 "POST /api/messages/ HTTP/1.1" 403 45
+INFO 2025-07-29 16:26:01,292 autoreload 32248 4148 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\Django-signals_orm-0x04\settings.py changed, reloading.
+INFO 2025-07-29 16:26:02,188 autoreload 14416 1500 Watching for file changes with StatReloader
+WARNING 2025-07-29 16:26:05,094 log 14416 5180 Unauthorized: /api/messages/
+WARNING 2025-07-29 16:26:05,094 basehttp 14416 5180 "POST /api/messages/ HTTP/1.1" 401 58
+WARNING 2025-07-29 16:26:49,347 log 14416 5180 Unauthorized: /api/messages/
+WARNING 2025-07-29 16:26:49,348 basehttp 14416 5180 "POST /api/messages/ HTTP/1.1" 401 58
+INFO 2025-07-29 16:27:16,703 autoreload 14416 1500 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:27:17,935 autoreload 31344 8148 Watching for file changes with StatReloader
+WARNING 2025-07-29 16:27:20,528 log 31344 7976 Unauthorized: /api/messages/
+WARNING 2025-07-29 16:27:20,529 basehttp 31344 7976 "POST /api/messages/ HTTP/1.1" 401 58
+INFO 2025-07-29 16:29:49,985 autoreload 31344 8148 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:29:51,587 autoreload 30036 12840 Watching for file changes with StatReloader
+WARNING 2025-07-29 16:29:53,597 log 30036 10288 Unauthorized: /api/messages/
+WARNING 2025-07-29 16:29:53,598 basehttp 30036 10288 "POST /api/messages/ HTTP/1.1" 401 58
+WARNING 2025-07-29 16:29:58,801 log 30036 10288 Unauthorized: /api/messages/
+WARNING 2025-07-29 16:29:58,802 basehttp 30036 10288 "POST /api/messages/ HTTP/1.1" 401 58
+INFO 2025-07-29 16:31:16,777 autoreload 30036 12840 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\Django-signals_orm-0x04\settings.py changed, reloading.
+INFO 2025-07-29 16:31:18,278 autoreload 29008 30700 Watching for file changes with StatReloader
+WARNING 2025-07-29 16:31:21,164 log 29008 28388 Unauthorized: /api/messages/
+WARNING 2025-07-29 16:31:21,165 basehttp 29008 28388 "POST /api/messages/ HTTP/1.1" 401 58
+WARNING 2025-07-29 16:31:24,002 log 29008 28388 Unauthorized: /api/messages/
+WARNING 2025-07-29 16:31:24,003 basehttp 29008 28388 "POST /api/messages/ HTTP/1.1" 401 58
+INFO 2025-07-29 16:33:14,407 autoreload 29008 30700 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 16:33:16,378 autoreload 24312 31324 Watching for file changes with StatReloader
+INFO 2025-07-29 16:33:20,448 autoreload 24312 31324 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 16:33:21,136 autoreload 19712 30820 Watching for file changes with StatReloader
+INFO 2025-07-29 16:33:24,298 autoreload 19712 30820 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 16:33:25,192 autoreload 29768 24520 Watching for file changes with StatReloader
+INFO 2025-07-29 16:33:28,288 autoreload 29768 24520 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 16:33:29,009 autoreload 18932 30328 Watching for file changes with StatReloader
+INFO 2025-07-29 16:33:38,517 autoreload 18932 30328 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 16:33:39,299 autoreload 26904 29936 Watching for file changes with StatReloader
+INFO 2025-07-29 16:33:42,237 autoreload 26904 29936 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 16:33:43,007 autoreload 6324 29228 Watching for file changes with StatReloader
+INFO 2025-07-29 16:33:44,810 autoreload 6324 29228 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 16:33:45,770 autoreload 11240 17700 Watching for file changes with StatReloader
+INFO 2025-07-29 16:33:53,557 autoreload 11240 17700 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 16:33:54,424 autoreload 30616 804 Watching for file changes with StatReloader
+INFO 2025-07-29 16:33:56,350 autoreload 30616 804 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 16:33:57,112 autoreload 27724 23472 Watching for file changes with StatReloader
+INFO 2025-07-29 16:34:01,176 autoreload 27724 23472 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 16:34:02,150 autoreload 27592 2212 Watching for file changes with StatReloader
+INFO 2025-07-29 16:34:04,300 autoreload 27592 2212 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 16:34:05,156 autoreload 12744 25724 Watching for file changes with StatReloader
+INFO 2025-07-29 16:34:12,751 autoreload 12744 25724 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 16:34:13,621 autoreload 32312 11432 Watching for file changes with StatReloader
+INFO 2025-07-29 16:34:15,559 autoreload 32312 11432 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 16:34:16,307 autoreload 29848 31324 Watching for file changes with StatReloader
+INFO 2025-07-29 16:34:18,544 autoreload 29848 31324 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 16:34:19,323 autoreload 29956 22628 Watching for file changes with StatReloader
+WARNING 2025-07-29 16:34:23,302 log 29956 2424 Unauthorized: /api/messages/
+WARNING 2025-07-29 16:34:23,303 basehttp 29956 2424 "POST /api/messages/ HTTP/1.1" 401 58
+WARNING 2025-07-29 16:34:25,328 log 29956 2424 Unauthorized: /api/messages/
+WARNING 2025-07-29 16:34:25,330 basehttp 29956 2424 "POST /api/messages/ HTTP/1.1" 401 58
+INFO 2025-07-29 16:34:58,715 autoreload 29956 22628 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:34:59,536 autoreload 16332 26428 Watching for file changes with StatReloader
+WARNING 2025-07-29 16:35:03,202 log 16332 11936 Forbidden: /api/messages/
+WARNING 2025-07-29 16:35:03,203 basehttp 16332 11936 "POST /api/messages/ HTTP/1.1" 403 63
+WARNING 2025-07-29 16:35:18,704 log 16332 11936 Forbidden: /api/messages/
+WARNING 2025-07-29 16:35:18,706 basehttp 16332 11936 "POST /api/messages/ HTTP/1.1" 403 63
+WARNING 2025-07-29 16:36:37,653 log 16332 31124 Forbidden: /api/messages/
+WARNING 2025-07-29 16:36:37,654 basehttp 16332 31124 "POST /api/messages/ HTTP/1.1" 403 63
+WARNING 2025-07-29 16:36:57,345 log 16332 31124 Forbidden: /api/messages/
+WARNING 2025-07-29 16:36:57,346 basehttp 16332 31124 "POST /api/messages/ HTTP/1.1" 403 63
+INFO 2025-07-29 16:37:43,762 autoreload 16332 26428 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\Django-signals_orm-0x04\settings.py changed, reloading.
+INFO 2025-07-29 16:37:45,340 autoreload 13396 28108 Watching for file changes with StatReloader
+WARNING 2025-07-29 16:37:47,573 log 13396 25912 Bad Request: /api/messages/
+WARNING 2025-07-29 16:37:47,575 basehttp 13396 25912 "POST /api/messages/ HTTP/1.1" 400 79
+INFO 2025-07-29 16:38:02,458 autoreload 13396 28108 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\Django-signals_orm-0x04\settings.py changed, reloading.
+INFO 2025-07-29 16:38:03,594 autoreload 8056 17868 Watching for file changes with StatReloader
+INFO 2025-07-29 16:38:08,424 autoreload 8056 17868 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:38:09,261 autoreload 30884 13256 Watching for file changes with StatReloader
+INFO 2025-07-29 16:38:11,810 autoreload 30884 13256 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:38:13,811 autoreload 17080 7940 Watching for file changes with StatReloader
+WARNING 2025-07-29 16:38:15,725 log 17080 19260 Unauthorized: /api/messages/
+WARNING 2025-07-29 16:38:15,726 basehttp 17080 19260 "POST /api/messages/ HTTP/1.1" 401 58
+WARNING 2025-07-29 16:38:21,330 log 17080 19260 Unauthorized: /api/messages/
+WARNING 2025-07-29 16:38:21,331 basehttp 17080 19260 "POST /api/messages/ HTTP/1.1" 401 58
+INFO 2025-07-29 16:38:27,596 autoreload 17080 7940 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\Django-signals_orm-0x04\settings.py changed, reloading.
+INFO 2025-07-29 16:38:28,449 autoreload 21544 19992 Watching for file changes with StatReloader
+INFO 2025-07-29 16:38:34,944 autoreload 21544 19992 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\Django-signals_orm-0x04\settings.py changed, reloading.
+INFO 2025-07-29 16:38:35,612 autoreload 24716 31128 Watching for file changes with StatReloader
+INFO 2025-07-29 16:38:51,772 autoreload 24716 31128 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\Django-signals_orm-0x04\settings.py changed, reloading.
+INFO 2025-07-29 16:38:52,483 autoreload 16312 31220 Watching for file changes with StatReloader
+WARNING 2025-07-29 16:38:54,631 log 16312 7912 Unauthorized: /api/messages/
+WARNING 2025-07-29 16:38:54,632 basehttp 16312 7912 "POST /api/messages/ HTTP/1.1" 401 58
+INFO 2025-07-29 16:39:02,686 autoreload 16312 31220 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\Django-signals_orm-0x04\settings.py changed, reloading.
+INFO 2025-07-29 16:39:03,415 autoreload 30976 12988 Watching for file changes with StatReloader
+WARNING 2025-07-29 16:39:22,443 log 30976 1832 Bad Request: /api/token/
+WARNING 2025-07-29 16:39:22,445 basehttp 30976 1832 "POST /api/token/ HTTP/1.1" 400 79
+WARNING 2025-07-29 16:39:46,001 log 30976 1832 Unauthorized: /api/token/
+WARNING 2025-07-29 16:39:46,002 basehttp 30976 1832 "POST /api/token/ HTTP/1.1" 401 63
+INFO 2025-07-29 16:39:52,720 basehttp 30976 1832 "POST /api/token/ HTTP/1.1" 200 489
+INFO 2025-07-29 16:40:13,653 autoreload 30976 12988 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:40:14,860 autoreload 2596 5648 Watching for file changes with StatReloader
+INFO 2025-07-29 16:40:36,115 autoreload 2596 5648 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:40:37,189 autoreload 12840 21768 Watching for file changes with StatReloader
+WARNING 2025-07-29 16:40:47,769 log 12840 17568 Unauthorized: /api/messages/
+WARNING 2025-07-29 16:40:47,770 basehttp 12840 17568 "POST /api/messages/ HTTP/1.1" 401 58
+WARNING 2025-07-29 16:41:04,062 log 12840 17568 Unauthorized: /api/messages/
+WARNING 2025-07-29 16:41:04,063 basehttp 12840 17568 "POST /api/messages/ HTTP/1.1" 401 58
+INFO 2025-07-29 16:41:54,164 autoreload 12840 21768 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:41:55,351 autoreload 31888 19372 Watching for file changes with StatReloader
+WARNING 2025-07-29 16:41:58,997 log 31888 31640 Unauthorized: /api/messages/
+WARNING 2025-07-29 16:41:58,998 basehttp 31888 31640 "POST /api/messages/ HTTP/1.1" 401 58
+INFO 2025-07-29 16:42:03,050 autoreload 31888 19372 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:42:04,007 autoreload 25936 19576 Watching for file changes with StatReloader
+WARNING 2025-07-29 16:42:06,502 log 25936 15608 Unauthorized: /api/messages/
+WARNING 2025-07-29 16:42:06,504 basehttp 25936 15608 "POST /api/messages/ HTTP/1.1" 401 58
+WARNING 2025-07-29 16:47:08,334 log 25936 15556 Bad Request: /api/token/refresh/
+WARNING 2025-07-29 16:47:08,346 basehttp 25936 15556 "POST /api/token/refresh/ HTTP/1.1" 400 39
+INFO 2025-07-29 16:47:35,370 basehttp 25936 15556 "POST /api/token/refresh/ HTTP/1.1" 200 489
+INFO 2025-07-29 16:47:53,953 autoreload 25936 19576 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:47:55,808 autoreload 28760 31484 Watching for file changes with StatReloader
+WARNING 2025-07-29 16:48:20,401 log 28760 27080 Unauthorized: /api/messages/
+WARNING 2025-07-29 16:48:20,402 basehttp 28760 27080 "POST /api/messages/ HTTP/1.1" 401 58
+WARNING 2025-07-29 16:49:47,192 log 28760 30792 Bad Request: /api/messages/
+WARNING 2025-07-29 16:49:47,193 basehttp 28760 30792 "POST /api/messages/ HTTP/1.1" 400 79
+WARNING 2025-07-29 16:51:26,164 log 28760 12572 Bad Request: /api/messages/
+WARNING 2025-07-29 16:51:26,165 basehttp 28760 12572 "POST /api/messages/ HTTP/1.1" 400 45
+INFO 2025-07-29 16:51:30,667 basehttp 28760 12572 "POST /api/messages/ HTTP/1.1" 200 10
+INFO 2025-07-29 16:52:21,612 autoreload 28760 31484 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:52:22,537 autoreload 17584 29816 Watching for file changes with StatReloader
+INFO 2025-07-29 16:52:25,786 autoreload 17584 29816 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:52:26,404 autoreload 26972 30964 Watching for file changes with StatReloader
+INFO 2025-07-29 16:52:39,301 basehttp 26972 17268 "POST /api/messages/ HTTP/1.1" 200 10
+INFO 2025-07-29 16:52:53,951 autoreload 26972 30964 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:52:54,862 autoreload 29708 30332 Watching for file changes with StatReloader
+INFO 2025-07-29 16:53:02,012 autoreload 29708 30332 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:53:02,737 autoreload 13072 31848 Watching for file changes with StatReloader
+INFO 2025-07-29 16:53:13,105 autoreload 13072 31848 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:53:14,138 autoreload 16728 14768 Watching for file changes with StatReloader
+INFO 2025-07-29 16:53:20,055 autoreload 16728 14768 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:53:20,816 autoreload 21728 28364 Watching for file changes with StatReloader
+INFO 2025-07-29 16:53:24,054 autoreload 21728 28364 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:53:24,730 autoreload 2068 3412 Watching for file changes with StatReloader
+INFO 2025-07-29 16:53:27,286 autoreload 2068 3412 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:53:28,101 autoreload 14732 23996 Watching for file changes with StatReloader
+INFO 2025-07-29 16:53:36,537 autoreload 14732 23996 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:53:37,294 autoreload 26128 31288 Watching for file changes with StatReloader
+INFO 2025-07-29 16:53:39,417 basehttp 26128 17060 "POST /api/messages/ HTTP/1.1" 200 10
+INFO 2025-07-29 16:53:48,582 autoreload 26128 31288 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:53:49,391 autoreload 24996 13268 Watching for file changes with StatReloader
+INFO 2025-07-29 16:53:52,742 autoreload 24996 13268 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:53:53,519 autoreload 30328 17428 Watching for file changes with StatReloader
+INFO 2025-07-29 16:54:02,215 autoreload 30328 17428 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:54:03,338 autoreload 3100 32716 Watching for file changes with StatReloader
+INFO 2025-07-29 16:54:05,989 autoreload 3100 32716 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:54:06,701 autoreload 27484 30760 Watching for file changes with StatReloader
+INFO 2025-07-29 16:54:12,319 autoreload 27484 30760 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:54:13,432 autoreload 30592 13568 Watching for file changes with StatReloader
+INFO 2025-07-29 16:54:16,027 autoreload 30592 13568 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:54:16,710 autoreload 29336 27240 Watching for file changes with StatReloader
+INFO 2025-07-29 16:54:18,981 autoreload 29336 27240 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:54:19,817 autoreload 30852 8480 Watching for file changes with StatReloader
+INFO 2025-07-29 16:55:05,578 autoreload 30852 8480 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:55:06,733 autoreload 12724 1832 Watching for file changes with StatReloader
+INFO 2025-07-29 16:55:20,319 autoreload 12724 1832 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:55:21,217 autoreload 15788 16664 Watching for file changes with StatReloader
+INFO 2025-07-29 16:55:25,699 autoreload 15788 16664 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:55:26,393 autoreload 15048 2172 Watching for file changes with StatReloader
+INFO 2025-07-29 16:55:28,586 autoreload 15048 2172 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:55:29,244 autoreload 21676 31944 Watching for file changes with StatReloader
+INFO 2025-07-29 16:55:33,344 autoreload 21676 31944 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:55:34,063 autoreload 7896 24896 Watching for file changes with StatReloader
+INFO 2025-07-29 16:55:40,335 autoreload 7896 24896 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:55:41,175 autoreload 31124 23092 Watching for file changes with StatReloader
+INFO 2025-07-29 16:55:53,107 autoreload 31124 23092 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:55:54,300 autoreload 8004 30648 Watching for file changes with StatReloader
+INFO 2025-07-29 16:55:56,632 autoreload 8004 30648 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:55:57,749 autoreload 16400 10140 Watching for file changes with StatReloader
+INFO 2025-07-29 16:55:59,828 autoreload 16400 10140 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:56:00,735 autoreload 28108 18628 Watching for file changes with StatReloader
+INFO 2025-07-29 16:56:05,027 autoreload 28108 18628 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:56:05,775 autoreload 26368 22452 Watching for file changes with StatReloader
+INFO 2025-07-29 16:56:08,771 autoreload 26368 22452 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:56:09,542 autoreload 31392 27832 Watching for file changes with StatReloader
+INFO 2025-07-29 16:56:12,261 autoreload 31392 27832 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:56:13,912 autoreload 25376 31104 Watching for file changes with StatReloader
+INFO 2025-07-29 16:56:17,346 autoreload 25376 31104 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:56:18,043 autoreload 29316 27992 Watching for file changes with StatReloader
+INFO 2025-07-29 16:56:22,581 autoreload 29316 27992 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:56:23,280 autoreload 19184 24208 Watching for file changes with StatReloader
+INFO 2025-07-29 16:56:58,231 autoreload 19184 24208 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:56:59,275 autoreload 8200 19648 Watching for file changes with StatReloader
+INFO 2025-07-29 16:57:03,245 autoreload 8200 19648 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:57:04,162 autoreload 8248 3816 Watching for file changes with StatReloader
+INFO 2025-07-29 16:57:11,111 autoreload 8248 3816 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:57:11,810 autoreload 26904 31428 Watching for file changes with StatReloader
+INFO 2025-07-29 16:57:16,199 autoreload 26904 31428 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:57:17,142 autoreload 16304 10380 Watching for file changes with StatReloader
+INFO 2025-07-29 16:57:41,275 autoreload 16304 10380 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:57:42,929 autoreload 22468 16628 Watching for file changes with StatReloader
+INFO 2025-07-29 16:57:48,486 autoreload 22468 16628 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:57:49,210 autoreload 18812 29704 Watching for file changes with StatReloader
+INFO 2025-07-29 16:57:57,430 autoreload 18812 29704 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:57:58,388 autoreload 30092 31904 Watching for file changes with StatReloader
+INFO 2025-07-29 16:58:05,573 autoreload 30092 31904 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:58:06,418 autoreload 24184 16676 Watching for file changes with StatReloader
+INFO 2025-07-29 16:58:09,716 autoreload 24184 16676 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:58:10,622 autoreload 30032 27904 Watching for file changes with StatReloader
+INFO 2025-07-29 16:58:20,436 autoreload 30032 27904 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:58:21,167 autoreload 29588 10024 Watching for file changes with StatReloader
+INFO 2025-07-29 16:58:39,460 autoreload 29588 10024 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:58:40,404 autoreload 25160 27592 Watching for file changes with StatReloader
+INFO 2025-07-29 16:58:43,281 autoreload 25160 27592 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:58:44,373 autoreload 27628 19616 Watching for file changes with StatReloader
+INFO 2025-07-29 16:58:46,782 autoreload 27628 19616 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:58:47,500 autoreload 25768 30396 Watching for file changes with StatReloader
+INFO 2025-07-29 16:59:05,971 autoreload 25768 30396 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:59:06,722 autoreload 12980 31528 Watching for file changes with StatReloader
+INFO 2025-07-29 16:59:09,305 autoreload 12980 31528 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:59:10,024 autoreload 30436 27756 Watching for file changes with StatReloader
+INFO 2025-07-29 16:59:17,810 autoreload 30436 27756 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:59:18,778 autoreload 21720 31760 Watching for file changes with StatReloader
+INFO 2025-07-29 16:59:24,410 autoreload 21720 31760 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:59:25,204 autoreload 32364 30196 Watching for file changes with StatReloader
+INFO 2025-07-29 16:59:27,302 autoreload 32364 30196 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:59:28,095 autoreload 14076 22060 Watching for file changes with StatReloader
+INFO 2025-07-29 16:59:42,422 autoreload 14076 22060 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:59:43,137 autoreload 25740 10156 Watching for file changes with StatReloader
+INFO 2025-07-29 16:59:48,623 autoreload 25740 10156 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:59:49,441 autoreload 25212 31612 Watching for file changes with StatReloader
+INFO 2025-07-29 16:59:54,313 autoreload 25212 31612 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 16:59:55,048 autoreload 10288 30664 Watching for file changes with StatReloader
+INFO 2025-07-29 17:00:06,023 autoreload 10288 30664 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:00:06,696 autoreload 24956 7276 Watching for file changes with StatReloader
+INFO 2025-07-29 17:00:21,777 autoreload 24956 7276 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:00:22,684 autoreload 9248 24452 Watching for file changes with StatReloader
+INFO 2025-07-29 17:00:26,175 autoreload 9248 24452 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:00:26,836 autoreload 20244 27392 Watching for file changes with StatReloader
+INFO 2025-07-29 17:00:30,402 autoreload 20244 27392 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:00:31,078 autoreload 30964 11800 Watching for file changes with StatReloader
+INFO 2025-07-29 17:00:41,127 autoreload 30964 11800 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:00:41,926 autoreload 29372 29136 Watching for file changes with StatReloader
+INFO 2025-07-29 17:00:44,461 autoreload 29372 29136 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:00:45,267 autoreload 11952 20452 Watching for file changes with StatReloader
+INFO 2025-07-29 17:00:48,513 autoreload 11952 20452 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:00:49,316 autoreload 1236 32156 Watching for file changes with StatReloader
+INFO 2025-07-29 17:00:52,603 autoreload 1236 32156 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:00:53,751 autoreload 30004 14748 Watching for file changes with StatReloader
+INFO 2025-07-29 17:00:58,068 autoreload 30004 14748 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:00:59,427 autoreload 14232 5036 Watching for file changes with StatReloader
+INFO 2025-07-29 17:01:02,135 autoreload 14232 5036 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:01:03,027 autoreload 14072 8288 Watching for file changes with StatReloader
+ERROR 2025-07-29 17:01:09,496 log 14072 13740 Internal Server Error: /api/messages/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py", line 50, in create
+    recipient = get_object_or_404(User, reciever)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\shortcuts.py", line 90, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\db\models\query.py", line 619, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\db\models\query.py", line 1493, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\db\models\query.py", line 1511, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\db\models\query.py", line 1518, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\db\models\sql\query.py", line 1646, in add_q
+    clause, _ = self._add_q(q_object, can_reuse)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\db\models\sql\query.py", line 1678, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ~~~~~~~~~~~~~~~~~^
+        child,
+        ^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\db\models\sql\query.py", line 1523, in build_filter
+    arg, value = filter_expr
+    ^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+ERROR 2025-07-29 17:01:09,507 basehttp 14072 13740 "POST /api/messages/ HTTP/1.1" 500 146528
+INFO 2025-07-29 17:02:18,661 autoreload 14072 8288 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:02:19,810 autoreload 5872 24860 Watching for file changes with StatReloader
+INFO 2025-07-29 17:02:22,751 basehttp 5872 16620 "POST /api/messages/ HTTP/1.1" 200 51
+INFO 2025-07-29 17:03:30,720 autoreload 5872 24860 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 17:03:31,868 autoreload 30756 19876 Watching for file changes with StatReloader
+INFO 2025-07-29 17:03:41,550 autoreload 30756 19876 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 17:03:42,508 autoreload 22744 30428 Watching for file changes with StatReloader
+INFO 2025-07-29 17:03:59,153 autoreload 22744 30428 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:04:00,684 autoreload 17788 16468 Watching for file changes with StatReloader
+INFO 2025-07-29 17:04:03,258 autoreload 17788 16468 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:04:03,931 autoreload 7204 24344 Watching for file changes with StatReloader
+INFO 2025-07-29 17:04:18,001 autoreload 7204 24344 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:04:19,119 autoreload 20180 31172 Watching for file changes with StatReloader
+INFO 2025-07-29 17:04:21,338 autoreload 20180 31172 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:04:22,167 autoreload 14740 31696 Watching for file changes with StatReloader
+INFO 2025-07-29 17:04:24,612 autoreload 14740 31696 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:04:25,311 autoreload 20424 31004 Watching for file changes with StatReloader
+INFO 2025-07-29 17:04:28,343 autoreload 20424 31004 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:04:29,312 autoreload 18776 25264 Watching for file changes with StatReloader
+INFO 2025-07-29 17:04:31,469 autoreload 18776 25264 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:04:32,333 autoreload 31200 13460 Watching for file changes with StatReloader
+INFO 2025-07-29 17:04:37,924 autoreload 31200 13460 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:04:38,742 autoreload 32060 10688 Watching for file changes with StatReloader
+INFO 2025-07-29 17:04:50,701 autoreload 32060 10688 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:04:51,563 autoreload 11156 7764 Watching for file changes with StatReloader
+INFO 2025-07-29 17:04:54,560 autoreload 11156 7764 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:04:55,280 autoreload 27392 27756 Watching for file changes with StatReloader
+INFO 2025-07-29 17:05:04,137 autoreload 27392 27756 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:05:04,889 autoreload 15860 30448 Watching for file changes with StatReloader
+INFO 2025-07-29 17:05:07,043 autoreload 15860 30448 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:05:07,940 autoreload 18052 14164 Watching for file changes with StatReloader
+INFO 2025-07-29 17:05:23,687 autoreload 18052 14164 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:05:24,684 autoreload 14888 32680 Watching for file changes with StatReloader
+INFO 2025-07-29 17:06:01,417 autoreload 14888 32680 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:06:02,258 autoreload 5592 23396 Watching for file changes with StatReloader
+INFO 2025-07-29 17:06:05,401 autoreload 5592 23396 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:06:06,258 autoreload 13940 7940 Watching for file changes with StatReloader
+INFO 2025-07-29 17:06:13,082 autoreload 13940 7940 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:06:14,028 autoreload 13664 32676 Watching for file changes with StatReloader
+INFO 2025-07-29 17:06:16,261 autoreload 13664 32676 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:06:16,886 autoreload 2552 27436 Watching for file changes with StatReloader
+INFO 2025-07-29 17:07:16,404 autoreload 2552 27436 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:07:17,136 autoreload 20072 14652 Watching for file changes with StatReloader
+INFO 2025-07-29 17:07:34,614 autoreload 20072 14652 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:07:35,420 autoreload 31296 20844 Watching for file changes with StatReloader
+INFO 2025-07-29 17:07:54,269 autoreload 31296 20844 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:07:55,261 autoreload 12864 14928 Watching for file changes with StatReloader
+INFO 2025-07-29 17:07:58,058 autoreload 12864 14928 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:07:58,732 autoreload 13664 10632 Watching for file changes with StatReloader
+INFO 2025-07-29 17:08:03,869 autoreload 13664 10632 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:08:05,264 autoreload 31632 18896 Watching for file changes with StatReloader
+INFO 2025-07-29 17:08:09,968 autoreload 31632 18896 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:08:10,792 autoreload 19992 30340 Watching for file changes with StatReloader
+INFO 2025-07-29 17:08:15,255 autoreload 19992 30340 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:08:15,901 autoreload 24260 21424 Watching for file changes with StatReloader
+INFO 2025-07-29 17:08:24,540 autoreload 24260 21424 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:08:25,230 autoreload 28692 15252 Watching for file changes with StatReloader
+INFO 2025-07-29 17:08:27,400 autoreload 28692 15252 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:08:28,214 autoreload 21332 28364 Watching for file changes with StatReloader
+INFO 2025-07-29 17:08:30,222 autoreload 21332 28364 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:08:31,097 autoreload 16844 24356 Watching for file changes with StatReloader
+INFO 2025-07-29 17:08:33,098 autoreload 16844 24356 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:08:33,777 autoreload 12320 27860 Watching for file changes with StatReloader
+INFO 2025-07-29 17:08:37,096 autoreload 12320 27860 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:08:37,837 autoreload 27540 15644 Watching for file changes with StatReloader
+INFO 2025-07-29 17:08:42,045 autoreload 27540 15644 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:08:42,755 autoreload 4148 31920 Watching for file changes with StatReloader
+INFO 2025-07-29 17:08:49,018 autoreload 4148 31920 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:08:49,794 autoreload 22232 18328 Watching for file changes with StatReloader
+INFO 2025-07-29 17:09:00,232 autoreload 22232 18328 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:09:00,952 autoreload 32748 6072 Watching for file changes with StatReloader
+INFO 2025-07-29 17:09:05,474 autoreload 32748 6072 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:09:06,294 autoreload 23948 15348 Watching for file changes with StatReloader
+INFO 2025-07-29 17:10:31,737 autoreload 23948 15348 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 17:10:32,932 autoreload 1236 14168 Watching for file changes with StatReloader
+INFO 2025-07-29 17:10:35,244 autoreload 1236 14168 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 17:10:35,880 autoreload 22656 26444 Watching for file changes with StatReloader
+INFO 2025-07-29 17:10:38,603 autoreload 22656 26444 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 17:10:39,829 autoreload 31396 31752 Watching for file changes with StatReloader
+INFO 2025-07-29 17:10:59,546 autoreload 31396 31752 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:11:00,437 autoreload 18208 32572 Watching for file changes with StatReloader
+WARNING 2025-07-29 17:11:06,855 log 18208 27904 Unauthorized: /api/messages/
+WARNING 2025-07-29 17:11:06,856 basehttp 18208 27904 "GET /api/messages/ HTTP/1.1" 401 172
+INFO 2025-07-29 17:12:05,020 basehttp 18208 27904 "POST /api/token/refresh/ HTTP/1.1" 200 489
+INFO 2025-07-29 17:12:20,339 autoreload 18208 32572 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:12:21,524 autoreload 29912 3596 Watching for file changes with StatReloader
+INFO 2025-07-29 17:12:24,166 autoreload 29912 3596 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:12:25,816 autoreload 20920 31212 Watching for file changes with StatReloader
+WARNING 2025-07-29 17:12:44,760 log 20920 28216 Unauthorized: /api/token/refresh/
+WARNING 2025-07-29 17:12:44,762 basehttp 20920 28216 "POST /api/token/refresh/ HTTP/1.1" 401 58
+INFO 2025-07-29 17:12:57,648 autoreload 20920 31212 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 17:12:58,797 autoreload 30832 4556 Watching for file changes with StatReloader
+ERROR 2025-07-29 17:13:29,771 log 30832 24752 Internal Server Error: /api/messages/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\fields.py", line 437, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\fields.py", line 104, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'Message' object has no attribute 'recipient'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 716, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 527, in to_representation
+    attribute = field.get_attribute(instance)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\fields.py", line 470, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `recipient` on serializer `MessageSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `Message` instance.
+Original exception text was: 'Message' object has no attribute 'recipient'.
+ERROR 2025-07-29 17:13:29,781 basehttp 30832 24752 "GET /api/messages/ HTTP/1.1" 500 142370
+INFO 2025-07-29 17:14:10,285 autoreload 30832 4556 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 17:14:12,172 autoreload 18976 5980 Watching for file changes with StatReloader
+INFO 2025-07-29 17:14:19,147 basehttp 18976 30360 "GET /api/messages/ HTTP/1.1" 200 146
+INFO 2025-07-29 17:15:00,162 autoreload 18976 5980 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 17:15:01,585 autoreload 18524 12872 Watching for file changes with StatReloader
+INFO 2025-07-29 17:15:05,300 autoreload 18524 12872 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 17:15:06,135 autoreload 23740 22532 Watching for file changes with StatReloader
+INFO 2025-07-29 17:15:23,667 autoreload 32208 8496 Watching for file changes with StatReloader
+INFO 2025-07-29 17:16:26,922 autoreload 5712 29644 Watching for file changes with StatReloader
+INFO 2025-07-29 17:16:29,060 basehttp 5712 10104 "GET /api/messages/ HTTP/1.1" 200 146
+INFO 2025-07-29 17:17:36,141 autoreload 5712 29644 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 17:17:37,246 autoreload 1964 6256 Watching for file changes with StatReloader
+INFO 2025-07-29 17:18:24,138 autoreload 1964 6256 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 17:18:25,164 autoreload 21232 28508 Watching for file changes with StatReloader
+WARNING 2025-07-29 18:08:11,745 log 21232 29152 Unauthorized: /api/messages/
+WARNING 2025-07-29 18:08:11,754 basehttp 21232 29152 "POST /api/messages/ HTTP/1.1" 401 172
+INFO 2025-07-29 18:09:15,600 basehttp 21232 23104 "POST /api/token/refresh/ HTTP/1.1" 200 489
+WARNING 2025-07-29 18:09:20,847 log 21232 23104 Unauthorized: /api/token/refresh/
+WARNING 2025-07-29 18:09:20,849 basehttp 21232 23104 "POST /api/token/refresh/ HTTP/1.1" 401 58
+INFO 2025-07-29 18:09:33,143 autoreload 21232 28508 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 18:09:34,570 autoreload 20964 31104 Watching for file changes with StatReloader
+WARNING 2025-07-29 18:10:11,436 log 20964 19376 Bad Request: /api/messages/
+WARNING 2025-07-29 18:10:11,437 basehttp 20964 19376 "POST /api/messages/ HTTP/1.1" 400 79
+WARNING 2025-07-29 18:10:28,810 log 20964 19376 Bad Request: /api/messages/
+WARNING 2025-07-29 18:10:28,811 basehttp 20964 19376 "POST /api/messages/ HTTP/1.1" 400 45
+INFO 2025-07-29 18:10:35,625 basehttp 20964 19376 "POST /api/messages/ HTTP/1.1" 200 51
+INFO 2025-07-29 18:13:49,252 autoreload 20964 31104 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\apps.py changed, reloading.
+INFO 2025-07-29 18:13:50,525 autoreload 32736 32180 Watching for file changes with StatReloader
+INFO 2025-07-29 18:13:56,022 autoreload 32736 32180 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\apps.py changed, reloading.
+INFO 2025-07-29 18:13:56,836 autoreload 4636 22232 Watching for file changes with StatReloader
+INFO 2025-07-29 18:13:59,835 autoreload 4636 22232 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\apps.py changed, reloading.
+INFO 2025-07-29 18:14:00,536 autoreload 3644 10808 Watching for file changes with StatReloader
+INFO 2025-07-29 18:14:16,994 autoreload 3644 10808 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\apps.py changed, reloading.
+INFO 2025-07-29 18:14:17,587 autoreload 4260 18808 Watching for file changes with StatReloader
+INFO 2025-07-29 18:14:18,833 autoreload 4260 18808 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\apps.py changed, reloading.
+INFO 2025-07-29 18:14:19,339 autoreload 2448 344 Watching for file changes with StatReloader
+INFO 2025-07-29 18:14:25,649 autoreload 2448 344 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\apps.py changed, reloading.
+INFO 2025-07-29 18:14:26,207 autoreload 22628 1324 Watching for file changes with StatReloader
+INFO 2025-07-29 18:14:28,453 autoreload 22628 1324 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\apps.py changed, reloading.
+INFO 2025-07-29 18:14:29,000 autoreload 28372 26032 Watching for file changes with StatReloader
+INFO 2025-07-29 18:14:30,293 autoreload 28372 26032 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\apps.py changed, reloading.
+INFO 2025-07-29 18:14:30,974 autoreload 6444 25500 Watching for file changes with StatReloader
+INFO 2025-07-29 18:14:38,823 basehttp 6444 4332 "POST /api/messages/ HTTP/1.1" 200 51
+INFO 2025-07-29 18:14:52,766 autoreload 6444 25500 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\apps.py changed, reloading.
+INFO 2025-07-29 18:14:53,317 autoreload 8104 4116 Watching for file changes with StatReloader
+INFO 2025-07-29 18:14:56,597 autoreload 8104 4116 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\apps.py changed, reloading.
+INFO 2025-07-29 18:14:57,214 autoreload 8572 6260 Watching for file changes with StatReloader
+INFO 2025-07-29 18:15:00,949 basehttp 8572 31152 "POST /api/messages/ HTTP/1.1" 200 51
+INFO 2025-07-29 18:15:25,645 autoreload 8572 6260 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\signals.py changed, reloading.
+INFO 2025-07-29 18:15:26,293 autoreload 13628 26940 Watching for file changes with StatReloader
+INFO 2025-07-29 18:15:31,520 autoreload 13628 26940 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\signals.py changed, reloading.
+INFO 2025-07-29 18:15:32,209 autoreload 11604 19716 Watching for file changes with StatReloader
+INFO 2025-07-29 18:15:46,213 autoreload 11604 19716 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\signals.py changed, reloading.
+INFO 2025-07-29 18:15:46,893 autoreload 31940 17952 Watching for file changes with StatReloader
+INFO 2025-07-29 18:15:50,348 basehttp 31940 14316 "POST /api/messages/ HTTP/1.1" 200 51
+INFO 2025-07-29 18:16:09,918 autoreload 31940 17952 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\signals.py changed, reloading.
+INFO 2025-07-29 18:16:10,950 autoreload 15640 31364 Watching for file changes with StatReloader
+INFO 2025-07-29 18:16:13,117 autoreload 15640 31364 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\signals.py changed, reloading.
+INFO 2025-07-29 18:16:13,900 autoreload 12428 2904 Watching for file changes with StatReloader
+INFO 2025-07-29 18:16:19,329 autoreload 12428 2904 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\signals.py changed, reloading.
+INFO 2025-07-29 18:16:20,018 autoreload 1252 22868 Watching for file changes with StatReloader
+INFO 2025-07-29 18:16:48,059 autoreload 1252 22868 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\signals.py changed, reloading.
+INFO 2025-07-29 18:16:48,815 autoreload 29100 1064 Watching for file changes with StatReloader
+INFO 2025-07-29 18:16:52,975 autoreload 29100 1064 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\signals.py changed, reloading.
+INFO 2025-07-29 18:16:53,686 autoreload 21108 17744 Watching for file changes with StatReloader
+INFO 2025-07-29 18:16:56,730 autoreload 21108 17744 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\signals.py changed, reloading.
+INFO 2025-07-29 18:16:57,381 autoreload 26588 29832 Watching for file changes with StatReloader
+INFO 2025-07-29 18:16:59,349 autoreload 26588 29832 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\signals.py changed, reloading.
+INFO 2025-07-29 18:17:00,075 autoreload 6440 1988 Watching for file changes with StatReloader
+INFO 2025-07-29 18:17:04,207 autoreload 6440 1988 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\signals.py changed, reloading.
+INFO 2025-07-29 18:17:04,824 autoreload 27304 30948 Watching for file changes with StatReloader
+INFO 2025-07-29 18:17:06,807 autoreload 27304 30948 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\signals.py changed, reloading.
+INFO 2025-07-29 18:17:07,432 autoreload 28156 26608 Watching for file changes with StatReloader
+INFO 2025-07-29 18:17:16,048 autoreload 28156 26608 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\signals.py changed, reloading.
+INFO 2025-07-29 18:17:16,710 autoreload 17952 31452 Watching for file changes with StatReloader
+INFO 2025-07-29 18:17:19,710 autoreload 17952 31452 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\signals.py changed, reloading.
+INFO 2025-07-29 18:17:20,419 autoreload 31364 31512 Watching for file changes with StatReloader
+INFO 2025-07-29 18:17:24,604 autoreload 31364 31512 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\signals.py changed, reloading.
+INFO 2025-07-29 18:17:25,274 autoreload 21480 17880 Watching for file changes with StatReloader
+INFO 2025-07-29 18:17:35,780 autoreload 21480 17880 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\signals.py changed, reloading.
+INFO 2025-07-29 18:17:36,528 autoreload 30484 26664 Watching for file changes with StatReloader
+ERROR 2025-07-29 18:17:38,983 log 30484 14148 Internal Server Error: /api/messages/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py", line 54, in create
+    Message.objects.create(
+    ~~~~~~~~~~~~~~~~~~~~~~^
+        sender=current_user, receiver=recipient,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        content=content)
+        ^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\db\models\query.py", line 663, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\models.py", line 13, in save
+    super().save(*args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\db\models\base.py", line 1023, in save_base
+    post_save.send(
+    ~~~~~~~~~~~~~~^
+        sender=origin,
+        ^^^^^^^^^^^^^^
+    ...<4 lines>...
+        using=using,
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\dispatch\dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\signals.py", line 10, in create_notification
+    Notification.objects.create(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        receiver=receiver,
+        ^^^^^^^^^^^^^^^^^^
+        message=content)
+        ^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\db\models\base.py", line 545, in __init__
+    _setattr(self, field.name, rel_obj)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 394, in __set__
+    super().__set__(instance, value)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 291, in __set__
+    raise ValueError(
+    ...<7 lines>...
+    )
+ValueError: Cannot assign "'YOOO'": "Notification.message" must be a "Message" instance.
+ERROR 2025-07-29 18:17:38,993 basehttp 30484 14148 "POST /api/messages/ HTTP/1.1" 500 165736
+INFO 2025-07-29 18:18:19,392 autoreload 30484 26664 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\signals.py changed, reloading.
+INFO 2025-07-29 18:18:20,397 autoreload 21300 29972 Watching for file changes with StatReloader
+INFO 2025-07-29 18:18:24,713 basehttp 21300 15644 "POST /api/messages/ HTTP/1.1" 200 51
+INFO 2025-07-29 18:19:30,324 autoreload 21300 29972 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 18:19:31,289 autoreload 2376 32160 Watching for file changes with StatReloader
+INFO 2025-07-29 18:19:51,026 autoreload 2376 32160 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 18:19:51,657 autoreload 30136 10312 Watching for file changes with StatReloader
+INFO 2025-07-29 18:20:11,802 autoreload 30136 10312 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 18:20:12,521 autoreload 7316 1196 Watching for file changes with StatReloader
+INFO 2025-07-29 18:20:15,653 autoreload 7316 1196 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 18:20:16,244 autoreload 27492 31900 Watching for file changes with StatReloader
+INFO 2025-07-29 18:20:26,851 autoreload 27492 31900 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 18:20:27,408 autoreload 20628 30040 Watching for file changes with StatReloader
+INFO 2025-07-29 18:20:29,457 autoreload 20628 30040 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 18:20:30,045 autoreload 30256 14732 Watching for file changes with StatReloader
+INFO 2025-07-29 18:20:34,396 autoreload 30256 14732 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 18:20:35,021 autoreload 11396 30640 Watching for file changes with StatReloader
+INFO 2025-07-29 18:20:43,139 autoreload 11396 30640 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 18:20:43,825 autoreload 31296 31964 Watching for file changes with StatReloader
+INFO 2025-07-29 18:25:11,694 autoreload 30956 3064 Watching for file changes with StatReloader
+WARNING 2025-07-29 18:25:24,933 log 30956 29096 Not Found: /api/users/
+WARNING 2025-07-29 18:25:24,935 basehttp 30956 29096 "GET /api/users/ HTTP/1.1" 404 3547
+INFO 2025-07-29 18:26:41,491 autoreload 30956 3064 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 18:26:42,323 autoreload 4436 14856 Watching for file changes with StatReloader
+INFO 2025-07-29 18:26:48,538 autoreload 4436 14856 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 18:26:49,299 autoreload 13380 26368 Watching for file changes with StatReloader
+INFO 2025-07-29 18:26:51,145 autoreload 13380 26368 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 18:26:52,240 autoreload 724 12968 Watching for file changes with StatReloader
+INFO 2025-07-29 18:26:54,835 autoreload 724 12968 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 18:26:55,747 autoreload 32324 18732 Watching for file changes with StatReloader
+INFO 2025-07-29 18:27:02,284 autoreload 32324 18732 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 18:27:03,007 autoreload 7320 1196 Watching for file changes with StatReloader
+INFO 2025-07-29 18:27:07,295 autoreload 7320 1196 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 18:27:07,985 autoreload 21156 29296 Watching for file changes with StatReloader
+INFO 2025-07-29 18:27:11,947 autoreload 21156 29296 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 18:27:12,609 autoreload 28156 19372 Watching for file changes with StatReloader
+INFO 2025-07-29 18:27:15,877 autoreload 28156 19372 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 18:27:16,539 autoreload 31424 10612 Watching for file changes with StatReloader
+INFO 2025-07-29 18:27:49,992 autoreload 31424 10612 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 18:27:50,936 autoreload 18688 17188 Watching for file changes with StatReloader
+INFO 2025-07-29 18:27:54,241 autoreload 18688 17188 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 18:27:54,913 autoreload 17824 11056 Watching for file changes with StatReloader
+INFO 2025-07-29 18:28:04,706 autoreload 17824 11056 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 18:28:05,349 autoreload 13848 30776 Watching for file changes with StatReloader
+INFO 2025-07-29 18:28:12,658 autoreload 13848 30776 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 18:28:13,472 autoreload 2480 2936 Watching for file changes with StatReloader
+INFO 2025-07-29 18:28:17,804 autoreload 2480 2936 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 18:28:18,488 autoreload 32272 12656 Watching for file changes with StatReloader
+INFO 2025-07-29 18:28:21,581 autoreload 32272 12656 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 18:28:22,290 autoreload 8004 21088 Watching for file changes with StatReloader
+INFO 2025-07-29 18:28:26,570 autoreload 8004 21088 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 18:28:27,103 autoreload 31464 29544 Watching for file changes with StatReloader
+INFO 2025-07-29 18:28:35,635 autoreload 31464 29544 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 18:28:36,382 autoreload 30460 16632 Watching for file changes with StatReloader
+INFO 2025-07-29 18:28:39,461 autoreload 30460 16632 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 18:28:40,183 autoreload 29372 30920 Watching for file changes with StatReloader
+INFO 2025-07-29 18:28:43,454 autoreload 29372 30920 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 18:28:44,158 autoreload 16300 30964 Watching for file changes with StatReloader
+INFO 2025-07-29 18:28:48,660 autoreload 16300 30964 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 18:28:49,306 autoreload 30044 18612 Watching for file changes with StatReloader
+INFO 2025-07-29 18:28:54,441 autoreload 30044 18612 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 18:28:55,152 autoreload 4260 3816 Watching for file changes with StatReloader
+INFO 2025-07-29 18:28:57,408 autoreload 4260 3816 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 18:28:58,193 autoreload 28452 31632 Watching for file changes with StatReloader
+INFO 2025-07-29 18:29:04,657 autoreload 28452 31632 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 18:29:05,705 autoreload 23252 13860 Watching for file changes with StatReloader
+INFO 2025-07-29 18:29:12,316 autoreload 23252 13860 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 18:29:13,005 autoreload 19688 32568 Watching for file changes with StatReloader
+INFO 2025-07-29 18:29:29,276 autoreload 19688 32568 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 18:29:29,934 autoreload 11800 3676 Watching for file changes with StatReloader
+INFO 2025-07-29 18:29:37,439 autoreload 11800 3676 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 18:29:38,224 autoreload 31492 3520 Watching for file changes with StatReloader
+INFO 2025-07-29 18:29:41,115 autoreload 31492 3520 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 18:29:41,751 autoreload 200 30072 Watching for file changes with StatReloader
+INFO 2025-07-29 18:29:48,996 autoreload 200 30072 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 18:29:49,591 autoreload 24592 22180 Watching for file changes with StatReloader
+INFO 2025-07-29 18:29:53,717 autoreload 24592 22180 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 18:29:54,472 autoreload 14316 31900 Watching for file changes with StatReloader
+INFO 2025-07-29 18:29:56,587 autoreload 14316 31900 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 18:29:57,237 autoreload 22976 27832 Watching for file changes with StatReloader
+INFO 2025-07-29 18:30:04,612 autoreload 22976 27832 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\urls.py changed, reloading.
+INFO 2025-07-29 18:30:05,367 autoreload 18492 20684 Watching for file changes with StatReloader
+WARNING 2025-07-29 18:30:09,212 log 18492 31512 Unauthorized: /api/users/
+WARNING 2025-07-29 18:30:09,213 basehttp 18492 31512 "GET /api/users/ HTTP/1.1" 401 172
+INFO 2025-07-29 18:30:45,049 autoreload 18492 20684 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 18:30:45,810 autoreload 28760 13048 Watching for file changes with StatReloader
+INFO 2025-07-29 18:31:08,725 basehttp 28760 29580 "POST /api/token/refresh/ HTTP/1.1" 200 489
+INFO 2025-07-29 18:31:20,576 autoreload 28760 13048 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-29 18:31:21,331 autoreload 28900 25500 Watching for file changes with StatReloader
+ERROR 2025-07-29 18:31:48,173 log 28900 19816 Internal Server Error: /api/users/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py", line 47, in list
+    return Response(data=serializer.data, status=status.HTTP_200_OK)
+                         ^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 716, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 540, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\fields.py", line 1870, in to_representation
+    return method(value)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py", line 43, in get_messages
+    return MessageSerializer(obj.sender.all(), many=True).data
+                             ^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'sender'
+ERROR 2025-07-29 18:31:48,189 basehttp 28900 19816 "GET /api/users/ HTTP/1.1" 500 136947
+INFO 2025-07-29 18:32:38,587 autoreload 28900 25500 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 18:32:39,311 autoreload 2660 31884 Watching for file changes with StatReloader
+INFO 2025-07-29 18:32:59,726 autoreload 2660 31884 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 18:33:00,515 autoreload 29864 27496 Watching for file changes with StatReloader
+ERROR 2025-07-29 18:33:03,695 log 29864 26188 Internal Server Error: /api/users/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py", line 47, in list
+    return Response(data=serializer.data, status=status.HTTP_200_OK)
+                         ^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 716, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 540, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\fields.py", line 1869, in to_representation
+    method = getattr(self.parent, self.method_name)
+AttributeError: 'UserSerializer' object has no attribute 'get_notification'
+ERROR 2025-07-29 18:33:03,704 basehttp 29864 26188 "GET /api/users/ HTTP/1.1" 500 131695
+INFO 2025-07-29 18:33:31,428 autoreload 29864 27496 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 18:33:32,266 autoreload 16112 10156 Watching for file changes with StatReloader
+INFO 2025-07-29 18:33:35,132 basehttp 16112 32208 "GET /api/users/ HTTP/1.1" 200 780
+INFO 2025-07-29 18:34:13,398 autoreload 16112 10156 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 18:34:14,153 autoreload 20952 15368 Watching for file changes with StatReloader
+INFO 2025-07-29 18:34:19,477 autoreload 20952 15368 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 18:34:20,200 autoreload 28696 6152 Watching for file changes with StatReloader
+INFO 2025-07-29 18:34:34,011 autoreload 28696 6152 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 18:34:34,691 autoreload 24916 14736 Watching for file changes with StatReloader
+INFO 2025-07-29 18:34:47,627 autoreload 24916 14736 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 18:34:48,324 autoreload 3940 24364 Watching for file changes with StatReloader
+INFO 2025-07-29 18:35:18,109 autoreload 3940 24364 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 18:35:18,916 autoreload 31296 23448 Watching for file changes with StatReloader
+INFO 2025-07-29 18:35:25,113 autoreload 31296 23448 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 18:35:25,800 autoreload 24644 4184 Watching for file changes with StatReloader
+INFO 2025-07-29 18:35:33,065 autoreload 24644 4184 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 18:35:33,773 autoreload 31248 27016 Watching for file changes with StatReloader
+ERROR 2025-07-29 18:35:35,736 log 31248 22944 Internal Server Error: /api/users/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py", line 47, in list
+    return Response(data=serializer.data, status=status.HTTP_200_OK)
+                         ^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 716, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 540, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\fields.py", line 1869, in to_representation
+    method = getattr(self.parent, self.method_name)
+AttributeError: 'UserSerializer' object has no attribute 'get_notification'
+ERROR 2025-07-29 18:35:35,746 basehttp 31248 22944 "GET /api/users/ HTTP/1.1" 500 131695
+INFO 2025-07-29 18:35:55,941 autoreload 31248 27016 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 18:35:56,659 autoreload 14148 16888 Watching for file changes with StatReloader
+INFO 2025-07-29 18:36:00,706 basehttp 14148 30280 "GET /api/users/ HTTP/1.1" 200 780
+INFO 2025-07-29 18:36:46,906 autoreload 14148 16888 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 18:36:47,705 autoreload 31132 29372 Watching for file changes with StatReloader
+INFO 2025-07-29 18:36:49,056 basehttp 31132 4260 "GET /api/users/ HTTP/1.1" 200 780
+INFO 2025-07-29 18:37:03,990 autoreload 31132 29372 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 18:37:04,642 autoreload 31652 10892 Watching for file changes with StatReloader
+INFO 2025-07-29 18:37:06,487 autoreload 31652 10892 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 18:37:07,116 autoreload 5196 31920 Watching for file changes with StatReloader
+INFO 2025-07-29 18:40:34,558 autoreload 32384 6372 Watching for file changes with StatReloader
+INFO 2025-07-29 18:40:46,785 autoreload 32384 6372 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 18:40:47,529 autoreload 25008 832 Watching for file changes with StatReloader
+INFO 2025-07-29 18:40:50,112 basehttp 25008 1196 "GET /api/users/ HTTP/1.1" 200 822
+INFO 2025-07-29 18:41:14,850 autoreload 25008 832 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 18:41:15,656 autoreload 26640 17376 Watching for file changes with StatReloader
+ERROR 2025-07-29 18:41:16,600 log 26640 27824 Internal Server Error: /api/users/
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py", line 47, in list
+    return Response(data=serializer.data, status=status.HTTP_200_OK)
+                         ^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 716, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 540, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\fields.py", line 1870, in to_representation
+    return method(value)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py", line 43, in get_messages
+    return MessageSerializer(obj.inbox.all(), many=True).data
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 716, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\serializers.py", line 540, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\myvenv\Lib\site-packages\rest_framework\relations.py", line 468, in to_representation
+    return attrgetter(slug)(obj)
+           ~~~~~~~~~~~~~~~~^^^^^
+AttributeError: 'User' object has no attribute 'you'
+ERROR 2025-07-29 18:41:16,609 basehttp 26640 27824 "GET /api/users/ HTTP/1.1" 500 161272
+INFO 2025-07-29 18:41:22,259 autoreload 26640 17376 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 18:41:23,156 autoreload 1972 31652 Watching for file changes with StatReloader
+INFO 2025-07-29 18:41:30,976 autoreload 1972 31652 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-29 18:41:31,666 autoreload 32516 24356 Watching for file changes with StatReloader
+INFO 2025-07-29 18:41:55,292 autoreload 11648 4300 Watching for file changes with StatReloader
+INFO 2025-07-29 18:41:57,879 basehttp 11648 16560 "GET /api/users/ HTTP/1.1" 200 885
