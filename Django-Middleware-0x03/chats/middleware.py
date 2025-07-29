@@ -1,9 +1,9 @@
 import logging
 from datetime import datetime, timedelta
 from rest_framework.exceptions import Throttled
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponseForbidden
+from django.core.exceptions import PermissionDenied
 from datetime import datetime, time
-from django.http import HttpResponseForbidden
 
 logger = logging.getLogger(__name__) # Get a logger instance for the current module; in this case "middleware.py"
 
@@ -75,6 +75,24 @@ class OffensiveLanguageMiddleware:
             )
 
         return self.get_response(request)
-        
 
-        
+class RolepermissionMiddleware:
+    def __init__(self, get_response):
+        self.get_response = get_response
+
+    def __call__(self, request):
+        user = request.user
+        try:
+            if user.is_staff:
+                pass
+            else:
+                raise PermissionDenied
+        except PermissionDenied:
+            print(False)
+            return JsonResponse(
+                {"detail":"403 Forbidden"},
+                status=403
+            )
+        response = self.get_response(request)
+        print(True, 2)
+        return response
