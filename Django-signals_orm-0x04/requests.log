@@ -5026,3 +5026,16 @@ WARNING 2025-07-30 15:35:15,435 log 26092 304 Unauthorized: /api/delete-account/
 WARNING 2025-07-30 15:35:15,435 basehttp 26092 304 "DELETE /api/delete-account/ HTTP/1.1" 401 51
 WARNING 2025-07-30 15:35:20,207 log 26092 304 Unauthorized: /api/delete-account/
 WARNING 2025-07-30 15:35:20,208 basehttp 26092 304 "DELETE /api/delete-account/ HTTP/1.1" 401 51
+INFO 2025-07-30 15:37:23,414 autoreload 32612 22868 Watching for file changes with StatReloader
+WARNING 2025-07-30 15:37:26,079 log 32612 28320 Unauthorized: /api/delete-account/
+WARNING 2025-07-30 15:37:26,080 basehttp 32612 28320 "DELETE /api/delete-account/ HTTP/1.1" 401 51
+INFO 2025-07-30 15:38:05,909 autoreload 32612 22868 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\signals.py changed, reloading.
+INFO 2025-07-30 15:38:06,611 autoreload 21364 1480 Watching for file changes with StatReloader
+INFO 2025-07-30 15:38:18,144 autoreload 21364 1480 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\signals.py changed, reloading.
+INFO 2025-07-30 15:38:18,785 autoreload 12828 4104 Watching for file changes with StatReloader
+INFO 2025-07-30 15:38:27,079 autoreload 12828 4104 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\signals.py changed, reloading.
+INFO 2025-07-30 15:38:27,855 autoreload 8104 4800 Watching for file changes with StatReloader
+INFO 2025-07-30 15:38:29,897 autoreload 8104 4800 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\signals.py changed, reloading.
+INFO 2025-07-30 15:38:30,599 autoreload 3988 24940 Watching for file changes with StatReloader
+INFO 2025-07-30 15:38:46,381 autoreload 3988 24940 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\signals.py changed, reloading.
+INFO 2025-07-30 15:38:47,086 autoreload 30616 29916 Watching for file changes with StatReloader

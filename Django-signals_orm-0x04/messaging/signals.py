@@ -33,7 +33,7 @@ def create_message_history(sender, instance, **kwargs):
 @receiver(post_delete, sender=User)
 def delete_user(sender, instance, **kwargs):
     print(instance.username, instance.date_joined)
+    Message.objects.filter(sender=instance.username).delete()
     user_message_histories = MessageHistory.objects.filter(edited_by=instance.username)
-    print(user_message_histories)
     user_message_histories.delete()
     logger.info(f"Account deleted by user: {instance.username}")
