@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from dj_rest_auth.serializers import LoginSerializer
 from django.contrib.auth.hashers import make_password
-from .models import User, Message, Notification
+from .models import User, Message, Notification, MessageHistory
 
 class CustomLoginSerializer(LoginSerializer):
     username = serializers.CharField()
@@ -41,18 +41,19 @@ class UserSerializer(serializers.Serializer):
     
     def get_messages(self, obj):
         return MessageSerializer(obj.inbox.all(), many=True).data
-    
-    
+        
 class MessageSerializer(serializers.Serializer):
-    # To user reciever name
-    recipient = serializers.CharField(write_only=True)
+    # Input
+    receiver = serializers.CharField(write_only=True)
+
+    # Output
+    id = serializers.PrimaryKeyRelatedField(queryset=Message.objects.all())
     sender = serializers.SlugRelatedField(slug_field='username',
                             queryset=User.objects.all(), 
                             required=False)
     content = serializers.CharField(max_length=255)
-    receiver = serializers.SlugRelatedField(slug_field='username',
-                            queryset=User.objects.all(), 
-                            required=False)
+    
+    receiver = serializers.SlugRelatedField(slug_field='username',queryset=User.objects.all(), required=False)
     timestamp = serializers.DateTimeField(read_only=True)
 
     def validate_recipient(self, value):
@@ -68,9 +69,21 @@ class MessageSerializer(serializers.Serializer):
         return value.strip()
     
     def validate_sender(self, value):
-        print(value)
         return value.username
 
-# class NotificationSerializer(serializers.Serializer):
+    def validate_receiver(self, value):
+        if value:
+            val = value.username.strip().lower()
+            if User.objects.filter(username__iexact=val).exists():
+                raise serializers.ValidationError("You can't change the message owner to another user.")
+            return value
+    
+class MessageHistorySerializer(serializers.Serializer):
+    id = serializers.PrimaryKeyRelatedField(queryset=MessageHistory.objects.all())
+    modifier = serializers.CharField(read_only=True)
+    old_content = serializers.CharField(read_only=True)
+    recipient = serializers.CharField(read_only=True)
+    date_modified = serializers.DateTimeField(read_only=True)
+
 
 

@@ -3,11 +3,12 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import views
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.pagination import PageNumberPagination
 from dj_rest_auth.jwt_auth import JWTAuthentication
 from dj_rest_auth.views import LoginView
 from django.shortcuts import get_object_or_404
-from .serializers import UserSerializer, MessageSerializer
-from .models import User, Message
+from .serializers import UserSerializer, MessageSerializer, MessageHistorySerializer
+from .models import User, Message, MessageHistory
 
 class RegisterViewSet(views.APIView):
     authentication_classes = []
@@ -49,13 +50,16 @@ class UserViewSet(viewsets.ModelViewSet):
 class MessageModelViewSet(viewsets.ModelViewSet):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
-    http_method_names = ["post", "get"]
+    http_method_names = ["post", "get", "patch", "put", "delete"]
     serializer_class = MessageSerializer
+    pagination_class = [PageNumberPagination]
 
     def get_queryset(self):
+        print("In here")
         return Message.objects.select_related('sender', 'receiver').all()
     
     def create(self, request, *args, **kwargs):
+        print("In create")
         current_user = request.user
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -68,14 +72,32 @@ class MessageModelViewSet(viewsets.ModelViewSet):
         return Response({"success": f"Successfully sent message to {reciever}"},
                          status=status.HTTP_200_OK)
     
-    def get(self, request, *args, **kwargs):
+    def list(self, request, *args, **kwargs):
         serializer = self.get_serializer(self.get_queryset(), many=True)
         return Response({'success':'Successfully retrieved all messages',
                         'data':serializer.data}, status=status.HTTP_200_OK)
+    
+    def retrieve(self, request, *args, **kwargs):
+        id_exist = get_object_or_404(Message, id=kwargs.get('pk'))
+        serializer = self.get_serializer(id_exist)
+        print(serializer.data)
+        return Response(data=serializer.data, status=status.HTTP_200_OK)
+       
+    def update(self, request, *args, **kwargs):
+        message = get_object_or_404(Message, id=kwargs.get('pk'))
+        serializer = self.get_serializer(data=request.data, instance=message, partial=True)
+        serializer.is_valid(raise_exception=True)
+        message.receiver=message.receiver
+        message.content=serializer.validated_data.get('content')
+        message.edited=True
+        message.save()
+        return Response(data=serializer.data, status=status.HTTP_202_ACCEPTED)
+    
+class MessageHistoryModelViewSet(viewsets.ModelViewSet):
+    authentication_classes = [JWTAuthentication]
+    http_method_names = ["get"]
+    serializer_class = MessageHistorySerializer
+    queryset = MessageHistory.objects.all()
+
+    
    
-'''
-{
-    "access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzODEzODY4LCJpYXQiOjE3NTM4MTAyNjgsImp0aSI6ImZjY2U3MDM5MTk0MzRlY2ZiNjQ4YWQyYjM2ZmYwZDI1IiwidXNlcl9pZCI6IjQifQ.z-BHvTq3s6ed8X9vnDirIEV8KY5yZtkfA6r2fszhzHo",
-    "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1Mzg5NjY2OCwiaWF0IjoxNzUzODEwMjY4LCJqdGkiOiJiYWY5ZmUxNWFkZWQ0MWM3YTY0OTEyNWEyNzA4MTE1NyIsInVzZXJfaWQiOiI0In0.NixZ4_2BaXwWtxlIMcNBn8Mx8UMBooe7a6kiNUc5fEQ"
-}
-'''

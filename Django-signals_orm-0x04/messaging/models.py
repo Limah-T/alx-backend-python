@@ -6,6 +6,7 @@ class Message(models.Model):
     receiver = models.ForeignKey(User, on_delete=models.CASCADE, related_name='inbox')
     content = models.TextField(null=False, blank=False)
     timestamp = models.DateTimeField(auto_now_add=True)
+    edited = models.BooleanField(default=False)
 
     def save(self, *args, **kwargs):
         if self.content:
@@ -14,7 +15,13 @@ class Message(models.Model):
 
 class Notification(models.Model):
     receiver = models.ForeignKey(User, on_delete=models.CASCADE, related_name='notifications')
-    message = models.OneToOneField(Message, on_delete=models.CASCADE, related_name='notification') 
+    message = models.ForeignKey(Message, on_delete=models.CASCADE, related_name='notification') 
     timestamp = models.DateTimeField(auto_now_add=True)
+
+class MessageHistory(models.Model):
+    modifier = models.CharField(max_length=255, null=False, blank=True)
+    old_content = models.TextField(null=False, blank=True)
+    recipient = models.CharField(max_length=255, null=False, blank=True)
+    date_modified = models.DateTimeField(auto_now_add=True)
 
 
