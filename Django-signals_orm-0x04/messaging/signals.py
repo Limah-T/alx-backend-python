@@ -1,5 +1,6 @@
 from django.dispatch import receiver
-from django.db.models.signals import post_save, pre_save
+from django.contrib.auth.models import User
+from django.db.models.signals import post_save, pre_save, post_delete
 from .models import Message, Notification, MessageHistory
 import logging
 
@@ -28,3 +29,11 @@ def create_message_history(sender, instance, **kwargs):
         )
         instance.edited=False
         logger.info(f"User: {instance.sender} => edited a message[{old_content.content}] to [{instance.content}] | Sent to {instance.receiver} at {mh.edited_at}")
+
+@receiver(post_delete, sender=User)
+def delete_user(sender, instance, **kwargs):
+    print(instance.username, instance.date_joined)
+    user_message_histories = MessageHistory.objects.filter(edited_by=instance.username)
+    print(user_message_histories)
+    user_message_histories.delete()
+    logger.info(f"Account deleted by user: {instance.username}")

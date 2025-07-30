@@ -4,6 +4,7 @@ from rest_framework import status
 from rest_framework import views
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.pagination import PageNumberPagination
+from rest_framework.decorators import api_view, permission_classes, authentication_classes
 from dj_rest_auth.jwt_auth import JWTAuthentication
 from dj_rest_auth.views import LoginView
 from django.shortcuts import get_object_or_404
@@ -99,5 +100,12 @@ class MessageHistoryModelViewSet(viewsets.ModelViewSet):
     serializer_class = MessageHistorySerializer
     queryset = MessageHistory.objects.all()
 
-    
+@authentication_classes([JWTAuthentication])
+@permission_classes([IsAuthenticated])
+@api_view(http_method_names=["delete"])
+def delete_view(request):
+    request.user.delete()
+    return Response({'success': 'Account deleted successfully'}, status=status.HTTP_200_OK)
+
+
    
