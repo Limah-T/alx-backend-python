@@ -80,10 +80,10 @@ class MessageSerializer(serializers.Serializer):
     
 class MessageHistorySerializer(serializers.Serializer):
     id = serializers.PrimaryKeyRelatedField(queryset=MessageHistory.objects.all())
-    modifier = serializers.CharField(read_only=True)
+    edited_by = serializers.CharField(read_only=True)
     old_content = serializers.CharField(read_only=True)
     recipient = serializers.CharField(read_only=True)
-    date_modified = serializers.DateTimeField(read_only=True)
+    edited_at = serializers.DateTimeField(read_only=True)
 
 
 

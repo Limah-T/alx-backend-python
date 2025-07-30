@@ -22,9 +22,9 @@ def create_message_history(sender, instance, **kwargs):
         return 
     if instance.edited:
         mh=MessageHistory.objects.create(
-            modifier=instance.sender,
+            edited_by=instance.sender,
             old_content=old_content.content,
             recipient=instance.receiver,
         )
         instance.edited=False
-        logger.info(f"User: {instance.sender} => edited a message[{old_content.content}] to [{instance.content}] | Sent to {instance.receiver} at {mh.date_modified}")
+        logger.info(f"User: {instance.sender} => edited a message[{old_content.content}] to [{instance.content}] | Sent to {instance.receiver} at {mh.edited_at}")

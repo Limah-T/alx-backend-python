@@ -19,9 +19,9 @@ class Notification(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
 
 class MessageHistory(models.Model):
-    modifier = models.CharField(max_length=255, null=False, blank=True)
+    edited_by = models.CharField(max_length=255, null=False, blank=True)
     old_content = models.TextField(null=False, blank=True)
     recipient = models.CharField(max_length=255, null=False, blank=True)
-    date_modified = models.DateTimeField(auto_now_add=True)
+    edited_at = models.DateTimeField(auto_now_add=True)
 
 
