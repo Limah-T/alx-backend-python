@@ -5039,3 +5039,422 @@ INFO 2025-07-30 15:38:29,897 autoreload 8104 4800 C:\Users\User\OneDrive\Desktop
 INFO 2025-07-30 15:38:30,599 autoreload 3988 24940 Watching for file changes with StatReloader
 INFO 2025-07-30 15:38:46,381 autoreload 3988 24940 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\signals.py changed, reloading.
 INFO 2025-07-30 15:38:47,086 autoreload 30616 29916 Watching for file changes with StatReloader
+INFO 2025-07-30 15:53:24,925 autoreload 12216 21952 Watching for file changes with StatReloader
+WARNING 2025-07-30 15:53:32,265 log 12216 7740 Unauthorized: /api/delete-account/
+WARNING 2025-07-30 15:53:32,266 basehttp 12216 7740 "GET /api/delete-account/ HTTP/1.1" 401 51
+INFO 2025-07-30 15:54:15,576 basehttp 12216 7740 "POST /api/login/ HTTP/1.1" 200 489
+WARNING 2025-07-30 15:55:08,059 log 12216 7740 Method Not Allowed: /api/message-history/
+WARNING 2025-07-30 15:55:08,060 basehttp 12216 7740 "POST /api/message-history/ HTTP/1.1" 405 41
+INFO 2025-07-30 15:55:15,811 basehttp 12216 7740 "GET /api/message-history/ HTTP/1.1" 200 52
+WARNING 2025-07-30 15:55:36,718 log 12216 7740 Unauthorized: /api/message-history/
+WARNING 2025-07-30 15:55:36,719 basehttp 12216 7740 "GET /api/message-history/ HTTP/1.1" 401 51
+INFO 2025-07-30 15:55:45,332 basehttp 12216 7740 "GET /api/message-history/ HTTP/1.1" 200 52
+ERROR 2025-07-30 15:55:56,212 log 12216 7740 Internal Server Error: /api/users/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\mysql\base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+    ~~~~~~~~^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+MySQLdb.OperationalError: (1054, "Unknown column 'messaging_message.parent_message_id' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py", line 49, in list
+    return Response(data=serializer.data, status=status.HTTP_200_OK)
+                         ^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\serializers.py", line 716, in to_representation
+    self.child.to_representation(item) for item in iterable
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\serializers.py", line 540, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\fields.py", line 1870, in to_representation
+    return method(value)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py", line 43, in get_messages
+    return MessageSerializer(obj.inbox.all(), many=True).data
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\serializers.py", line 716, in to_representation
+    self.child.to_representation(item) for item in iterable
+                                                   ^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 384, in __iter__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 1949, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\backends\mysql\base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+    ~~~~~~~~^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.OperationalError: (1054, "Unknown column 'messaging_message.parent_message_id' in 'field list'")
+ERROR 2025-07-30 15:55:56,244 basehttp 12216 7740 "GET /api/users/ HTTP/1.1" 500 237238
+INFO 2025-07-30 15:57:18,161 autoreload 15532 21516 Watching for file changes with StatReloader
+INFO 2025-07-30 15:57:21,432 basehttp 15532 19408 "GET /api/users/ HTTP/1.1" 200 177
+INFO 2025-07-30 15:57:40,004 basehttp 15532 19408 "GET /api/messages/ HTTP/1.1" 200 59
+WARNING 2025-07-30 15:57:44,360 log 15532 19408 Bad Request: /api/messages/
+WARNING 2025-07-30 15:57:44,361 basehttp 15532 19408 "POST /api/messages/ HTTP/1.1" 400 72
+INFO 2025-07-30 15:58:14,770 autoreload 15532 21516 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-30 15:58:17,383 autoreload 23048 27288 Watching for file changes with StatReloader
+WARNING 2025-07-30 15:58:22,119 log 23048 16052 Bad Request: /api/messages/
+WARNING 2025-07-30 15:58:22,120 basehttp 23048 16052 "POST /api/messages/ HTTP/1.1" 400 72
+WARNING 2025-07-30 15:58:25,951 log 23048 16052 Bad Request: /api/messages/
+WARNING 2025-07-30 15:58:25,952 basehttp 23048 16052 "POST /api/messages/ HTTP/1.1" 400 72
+INFO 2025-07-30 15:58:42,792 autoreload 26920 27232 Watching for file changes with StatReloader
+WARNING 2025-07-30 15:58:45,749 log 26920 28824 Bad Request: /api/messages/
+WARNING 2025-07-30 15:58:45,750 basehttp 26920 28824 "POST /api/messages/ HTTP/1.1" 400 39
+INFO 2025-07-30 15:59:19,649 autoreload 26920 27232 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-30 15:59:21,919 autoreload 4360 26864 Watching for file changes with StatReloader
+INFO 2025-07-30 15:59:26,553 autoreload 22196 1432 Watching for file changes with StatReloader
+WARNING 2025-07-30 15:59:43,696 log 22196 25356 Bad Request: /api/messages/
+WARNING 2025-07-30 15:59:43,698 basehttp 22196 25356 "POST /api/messages/ HTTP/1.1" 400 46
+WARNING 2025-07-30 15:59:58,582 log 22196 25356 Bad Request: /api/messages/
+WARNING 2025-07-30 15:59:58,583 basehttp 22196 25356 "POST /api/messages/ HTTP/1.1" 400 65
+WARNING 2025-07-30 16:00:10,195 log 22196 25356 Bad Request: /api/messages/
+WARNING 2025-07-30 16:00:10,196 basehttp 22196 25356 "POST /api/messages/ HTTP/1.1" 400 74
+WARNING 2025-07-30 16:00:36,055 log 22196 25356 Bad Request: /api/messages/
+WARNING 2025-07-30 16:00:36,056 basehttp 22196 25356 "POST /api/messages/ HTTP/1.1" 400 74
+INFO 2025-07-30 16:01:20,917 autoreload 22196 1432 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-30 16:01:21,778 autoreload 12600 8384 Watching for file changes with StatReloader
+WARNING 2025-07-30 16:01:26,047 log 12600 13416 Bad Request: /api/messages/
+WARNING 2025-07-30 16:01:26,048 basehttp 12600 13416 "POST /api/messages/ HTTP/1.1" 400 74
+INFO 2025-07-30 16:01:37,849 autoreload 12600 8384 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-30 16:01:38,567 autoreload 29192 19008 Watching for file changes with StatReloader
+INFO 2025-07-30 16:02:13,655 autoreload 29192 19008 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-30 16:02:14,566 autoreload 29428 26788 Watching for file changes with StatReloader
+INFO 2025-07-30 16:02:41,540 autoreload 29428 26788 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-30 16:02:42,318 autoreload 16300 14672 Watching for file changes with StatReloader
+INFO 2025-07-30 16:02:50,065 autoreload 16300 14672 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-30 16:02:50,898 autoreload 24820 11884 Watching for file changes with StatReloader
+INFO 2025-07-30 16:02:54,487 autoreload 24820 11884 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-30 16:02:55,301 autoreload 21404 16084 Watching for file changes with StatReloader
+INFO 2025-07-30 16:03:29,139 autoreload 21404 16084 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-30 16:03:30,276 autoreload 18260 30232 Watching for file changes with StatReloader
+INFO 2025-07-30 16:04:01,165 autoreload 18260 30232 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-30 16:04:02,007 autoreload 8848 8520 Watching for file changes with StatReloader
+INFO 2025-07-30 16:04:51,142 autoreload 8848 8520 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-30 16:04:51,914 autoreload 15944 29336 Watching for file changes with StatReloader
+INFO 2025-07-30 16:05:02,869 autoreload 15944 29336 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-30 16:05:03,761 autoreload 11512 29204 Watching for file changes with StatReloader
+INFO 2025-07-30 16:05:07,333 autoreload 11512 29204 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-30 16:05:09,321 autoreload 17892 25844 Watching for file changes with StatReloader
+ERROR 2025-07-30 16:05:15,480 log 17892 28808 Internal Server Error: /api/messages/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py", line 66, in create
+    serializer.is_valid(raise_exception=True)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\serializers.py", line 225, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\serializers.py", line 444, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\serializers.py", line 503, in to_internal_value
+    validated_value = validate_method(validated_value)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py", line 76, in validate_parent_message
+    val = value.username.strip().lower()
+          ^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'username'
+ERROR 2025-07-30 16:05:15,501 basehttp 17892 28808 "POST /api/messages/ HTTP/1.1" 500 129741
+INFO 2025-07-30 16:05:42,317 autoreload 17892 25844 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-30 16:05:43,545 autoreload 11704 24380 Watching for file changes with StatReloader
+INFO 2025-07-30 16:05:48,187 autoreload 11704 24380 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-30 16:05:49,053 autoreload 5172 22500 Watching for file changes with StatReloader
+WARNING 2025-07-30 16:05:51,210 log 5172 29996 Bad Request: /api/messages/
+WARNING 2025-07-30 16:05:51,211 basehttp 5172 29996 "POST /api/messages/ HTTP/1.1" 400 68
+INFO 2025-07-30 16:06:19,274 autoreload 5172 22500 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-30 16:06:20,232 autoreload 14756 31272 Watching for file changes with StatReloader
+INFO 2025-07-30 16:06:30,226 autoreload 14756 31272 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-30 16:06:31,084 autoreload 17760 7244 Watching for file changes with StatReloader
+WARNING 2025-07-30 16:06:32,366 log 17760 21496 Bad Request: /api/messages/
+WARNING 2025-07-30 16:06:32,367 basehttp 17760 21496 "POST /api/messages/ HTTP/1.1" 400 68
+WARNING 2025-07-30 16:06:37,171 log 17760 21496 Not Found: /api/messages/
+WARNING 2025-07-30 16:06:37,172 basehttp 17760 21496 "POST /api/messages/ HTTP/1.1" 404 45
+WARNING 2025-07-30 16:06:51,805 log 17760 21496 Not Found: /api/messages/
+WARNING 2025-07-30 16:06:51,805 basehttp 17760 21496 "POST /api/messages/ HTTP/1.1" 404 45
+INFO 2025-07-30 16:06:56,164 autoreload 17760 7244 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-30 16:06:57,127 autoreload 23812 28280 Watching for file changes with StatReloader
+WARNING 2025-07-30 16:06:58,746 log 23812 12052 Not Found: /api/messages/
+WARNING 2025-07-30 16:06:58,748 basehttp 23812 12052 "POST /api/messages/ HTTP/1.1" 404 45
+INFO 2025-07-30 16:07:04,798 autoreload 23812 28280 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-30 16:07:05,673 autoreload 30940 23888 Watching for file changes with StatReloader
+INFO 2025-07-30 16:08:25,881 autoreload 30940 23888 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-30 16:08:26,782 autoreload 2796 8072 Watching for file changes with StatReloader
+ERROR 2025-07-30 16:08:30,982 log 2796 17748 Internal Server Error: /api/messages/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py", line 66, in create
+    serializer.is_valid(raise_exception=True)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\serializers.py", line 225, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\serializers.py", line 444, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\serializers.py", line 503, in to_internal_value
+    validated_value = validate_method(validated_value)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py", line 62, in validate_parent_message
+    if not User.objects.filter(username__iexact=value.strip()).exists():
+                                                ^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'strip'
+ERROR 2025-07-30 16:08:30,990 basehttp 2796 17748 "POST /api/messages/ HTTP/1.1" 500 129956
+INFO 2025-07-30 16:08:49,675 autoreload 2796 8072 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-30 16:08:50,614 autoreload 17288 32056 Watching for file changes with StatReloader
+ERROR 2025-07-30 16:09:10,560 log 17288 17064 Internal Server Error: /api/messages/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py", line 66, in create
+    serializer.is_valid(raise_exception=True)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\serializers.py", line 225, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\serializers.py", line 444, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\serializers.py", line 503, in to_internal_value
+    validated_value = validate_method(validated_value)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py", line 62, in validate_parent_message
+    if not User.objects.filter(username__iexact=value.strip()).exists():
+                                                ^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'strip'
+ERROR 2025-07-30 16:09:10,567 basehttp 17288 17064 "POST /api/messages/ HTTP/1.1" 500 129940
+INFO 2025-07-30 16:09:56,204 autoreload 17288 32056 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-30 16:09:57,484 autoreload 28924 32320 Watching for file changes with StatReloader
+INFO 2025-07-30 16:10:03,563 autoreload 28924 32320 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-30 16:10:04,595 autoreload 2740 25292 Watching for file changes with StatReloader
+ERROR 2025-07-30 16:10:06,701 log 2740 2316 Internal Server Error: /api/messages/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py", line 66, in create
+    serializer.is_valid(raise_exception=True)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\serializers.py", line 225, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\serializers.py", line 444, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\serializers.py", line 503, in to_internal_value
+    validated_value = validate_method(validated_value)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py", line 64, in validate_parent_message
+    return value.strip()
+           ^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'strip'
+ERROR 2025-07-30 16:10:06,708 basehttp 2740 2316 "POST /api/messages/ HTTP/1.1" 500 129736
+INFO 2025-07-30 16:10:15,679 autoreload 2740 25292 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\serializers.py changed, reloading.
+INFO 2025-07-30 16:10:16,811 autoreload 12832 29532 Watching for file changes with StatReloader
+WARNING 2025-07-30 16:10:18,142 log 12832 25820 Not Found: /api/messages/
+WARNING 2025-07-30 16:10:18,143 basehttp 12832 25820 "POST /api/messages/ HTTP/1.1" 404 45
+INFO 2025-07-30 16:10:54,556 autoreload 12832 29532 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-30 16:10:55,777 autoreload 16484 23596 Watching for file changes with StatReloader
+WARNING 2025-07-30 16:10:57,390 log 16484 10708 Not Found: /api/messages/
+WARNING 2025-07-30 16:10:57,391 basehttp 16484 10708 "POST /api/messages/ HTTP/1.1" 404 45
+INFO 2025-07-30 16:11:21,676 autoreload 16484 23596 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-30 16:11:22,588 autoreload 19596 31988 Watching for file changes with StatReloader
+ERROR 2025-07-30 16:11:23,974 log 19596 23752 Internal Server Error: /api/messages/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py", line 71, in create
+    Message.objects.create(
+    ~~~~~~~~~~~~~~~~~~~~~~^
+        sender=current_user, receiver=recipient,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        content=content)
+        ^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+    ...<2 lines>...
+    )
+TypeError: Message() got unexpected keyword arguments: 'receiver'
+ERROR 2025-07-30 16:11:23,986 basehttp 19596 23752 "POST /api/messages/ HTTP/1.1" 500 123786
+INFO 2025-07-30 16:11:42,206 autoreload 19596 31988 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-30 16:11:43,028 autoreload 27400 30932 Watching for file changes with StatReloader
+INFO 2025-07-30 16:11:53,075 signals 27400 22784 Message object (9) has been created
+INFO 2025-07-30 16:11:53,075 signals 27400 22784 Notification sent to: limaht at 2025-07-30 15:11:52.969793+00:00
+INFO 2025-07-30 16:11:53,077 basehttp 27400 22784 "POST /api/messages/ HTTP/1.1" 200 49
+INFO 2025-07-30 16:12:01,675 autoreload 27400 30932 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-30 16:12:02,501 autoreload 29860 7656 Watching for file changes with StatReloader
+INFO 2025-07-30 16:12:09,249 autoreload 29860 7656 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-30 16:12:10,333 autoreload 30200 17008 Watching for file changes with StatReloader
+INFO 2025-07-30 16:12:17,760 autoreload 30200 17008 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-30 16:12:18,459 autoreload 17164 17076 Watching for file changes with StatReloader
+INFO 2025-07-30 16:12:21,928 autoreload 17164 17076 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-30 16:12:22,729 autoreload 22956 26056 Watching for file changes with StatReloader
+INFO 2025-07-30 16:12:31,996 basehttp 22956 29608 "GET /api/messages/ HTTP/1.1" 200 175
+INFO 2025-07-30 16:13:21,604 autoreload 22956 26056 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-30 16:13:22,974 autoreload 25268 18396 Watching for file changes with StatReloader
+INFO 2025-07-30 16:13:27,556 autoreload 25268 18396 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-30 16:13:28,451 autoreload 19616 28448 Watching for file changes with StatReloader
+INFO 2025-07-30 16:13:30,460 autoreload 19616 28448 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-30 16:13:31,348 autoreload 11532 3940 Watching for file changes with StatReloader
+INFO 2025-07-30 16:13:33,504 autoreload 11532 3940 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-30 16:13:34,733 autoreload 12572 13420 Watching for file changes with StatReloader
+INFO 2025-07-30 16:13:36,956 autoreload 12572 13420 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-30 16:13:37,634 autoreload 10580 28296 Watching for file changes with StatReloader
+INFO 2025-07-30 16:13:39,558 autoreload 10580 28296 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-30 16:13:40,310 autoreload 21984 28472 Watching for file changes with StatReloader
+INFO 2025-07-30 16:15:35,810 autoreload 21984 28472 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-30 16:15:36,875 autoreload 27336 31156 Watching for file changes with StatReloader

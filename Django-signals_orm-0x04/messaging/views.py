@@ -21,7 +21,6 @@ class RegisterViewSet(views.APIView):
     def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        print(serializer.validated_data)
         serializer.save()
         return Response(data=serializer.data, status=status.HTTP_200_OK)
     
@@ -56,19 +55,17 @@ class MessageModelViewSet(viewsets.ModelViewSet):
     pagination_class = [PageNumberPagination]
 
     def get_queryset(self):
-        print("In here")
-        return Message.objects.select_related('sender', 'receiver').all()
+        return Message.objects.select_related('sender', 'parent_message').all()
     
     def create(self, request, *args, **kwargs):
-        print("In create")
         current_user = request.user
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        reciever = serializer.validated_data.get("recipient")
+        reciever = serializer.validated_data.get("parent_message")
         content = serializer.validated_data.get("content")
         recipient = get_object_or_404(User, username=reciever)
         Message.objects.create(
-            sender=current_user, receiver=recipient, 
+            sender=current_user, parent_message=recipient, 
             content=content)
         return Response({"success": f"Successfully sent message to {reciever}"},
                          status=status.HTTP_200_OK)
@@ -81,7 +78,6 @@ class MessageModelViewSet(viewsets.ModelViewSet):
     def retrieve(self, request, *args, **kwargs):
         id_exist = get_object_or_404(Message, id=kwargs.get('pk'))
         serializer = self.get_serializer(id_exist)
-        print(serializer.data)
         return Response(data=serializer.data, status=status.HTTP_200_OK)
        
     def update(self, request, *args, **kwargs):

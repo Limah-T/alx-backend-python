@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 class Message(models.Model):
     sender = models.ForeignKey(User, on_delete=models.CASCADE, related_name='outbox')
-    receiver = models.ForeignKey(User, on_delete=models.CASCADE, related_name='inbox')
+    parent_message = models.ForeignKey(User, on_delete=models.CASCADE, related_name='inbox')   
     content = models.TextField(null=False, blank=False)
     timestamp = models.DateTimeField(auto_now_add=True)
     edited = models.BooleanField(default=False)

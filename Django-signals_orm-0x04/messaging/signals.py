@@ -8,12 +8,12 @@ logger = logging.getLogger(__name__)
 
 @receiver(post_save, sender=Message)
 def create_notification(sender, instance, **kwargs):
-    receiver = instance.receiver
+    receiver = instance.parent_message
     Notification.objects.create(
         receiver=receiver,
         message=instance)
     logger.info(f"{instance} has been created")
-    logger.info(f"Notification sent to: {instance.receiver} at {instance.timestamp}")
+    logger.info(f"Notification sent to: {instance.parent_message} at {instance.timestamp}")
 
 @receiver(pre_save, sender=Message)
 def create_message_history(sender, instance, **kwargs):
@@ -25,10 +25,10 @@ def create_message_history(sender, instance, **kwargs):
         mh=MessageHistory.objects.create(
             edited_by=instance.sender,
             old_content=old_content.content,
-            recipient=instance.receiver,
+            recipient=instance.parent_message,
         )
         instance.edited=False
-        logger.info(f"User: {instance.sender} => edited a message[{old_content.content}] to [{instance.content}] | Sent to {instance.receiver} at {mh.edited_at}")
+        logger.info(f"User: {instance.sender} => edited a message[{old_content.content}] to [{instance.content}] | Sent to {instance.parent_message} at {mh.edited_at}")
 
 @receiver(post_delete, sender=User)
 def delete_user(sender, instance, **kwargs):

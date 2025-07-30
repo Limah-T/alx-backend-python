@@ -44,24 +44,24 @@ class UserSerializer(serializers.Serializer):
         
 class MessageSerializer(serializers.Serializer):
     # Input
-    receiver = serializers.CharField(write_only=True)
+    # parent_message = serializers.CharField()
 
     # Output
-    id = serializers.PrimaryKeyRelatedField(queryset=Message.objects.all())
+    id = serializers.PrimaryKeyRelatedField(queryset=Message.objects.all(), required=False)
     sender = serializers.SlugRelatedField(slug_field='username',
                             queryset=User.objects.all(), 
                             required=False)
     content = serializers.CharField(max_length=255)
     
-    receiver = serializers.SlugRelatedField(slug_field='username',queryset=User.objects.all(), required=False)
+    parent_message = serializers.SlugRelatedField(slug_field='username',queryset=User.objects.all())
     timestamp = serializers.DateTimeField(read_only=True)
 
-    def validate_recipient(self, value):
+    def validate_parent_message(self, value):
         if not value:
             raise serializers.ValidationError({'error': 'This field may not be blank'})
-        if not User.objects.filter(username__iexact=value.strip()).exists():
+        if not User.objects.filter(username__iexact=value).exists():
             raise serializers.ValidationError({'error': 'Name does not exist'})
-        return value.strip().lower()
+        return value
 
     def validate_content(self, value):
         if not value:
@@ -71,12 +71,6 @@ class MessageSerializer(serializers.Serializer):
     def validate_sender(self, value):
         return value.username
 
-    def validate_receiver(self, value):
-        if value:
-            val = value.username.strip().lower()
-            if User.objects.filter(username__iexact=val).exists():
-                raise serializers.ValidationError("You can't change the message owner to another user.")
-            return value
     
 class MessageHistorySerializer(serializers.Serializer):
     id = serializers.PrimaryKeyRelatedField(queryset=MessageHistory.objects.all())
