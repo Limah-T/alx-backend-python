@@ -46,7 +46,8 @@ class UserViewSet(viewsets.ModelViewSet):
     def list(self, request, *args, **kwargs):
         serializer = self.get_serializer(self.queryset, many=True)
         return Response(data=serializer.data, status=status.HTTP_200_OK)
-    
+
+# [Message.objects.filter()]    
 class MessageModelViewSet(viewsets.ModelViewSet):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
@@ -58,14 +59,13 @@ class MessageModelViewSet(viewsets.ModelViewSet):
         return Message.objects.select_related('sender', 'parent_message').all()
     
     def create(self, request, *args, **kwargs):
-        current_user = request.user
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         reciever = serializer.validated_data.get("parent_message")
         content = serializer.validated_data.get("content")
         recipient = get_object_or_404(User, username=reciever)
         Message.objects.create(
-            sender=current_user, parent_message=recipient, 
+            sender=request.user, parent_message=recipient, 
             content=content)
         return Response({"success": f"Successfully sent message to {reciever}"},
                          status=status.HTTP_200_OK)
