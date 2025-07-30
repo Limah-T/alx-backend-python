@@ -1,6 +1,6 @@
 from django.urls import path
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
-from .views import RegisterViewSet, MessageModelViewSet, LoginViewset, UserViewSet, MessageHistoryModelViewSet,delete_view
+from .views import RegisterViewSet, MessageModelViewSet, LoginViewset, UserViewSet, MessageHistoryModelViewSet,delete_user
 
 app_name = 'messaging'
 
@@ -19,5 +19,5 @@ urlpatterns = [
                                 'put': 'update', 'delete': 'destroy'
                                 }), name='message'),
     path('message-history/', MessageHistoryModelViewSet.as_view({'get': 'list'}), name='message_history'),
-    path('delete-account/', delete_view, name='delete_account')
+    path('delete-account/', delete_user, name='delete_account')
 ]

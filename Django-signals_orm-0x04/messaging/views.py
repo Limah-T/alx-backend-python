@@ -103,7 +103,7 @@ class MessageHistoryModelViewSet(viewsets.ModelViewSet):
 @authentication_classes([JWTAuthentication])
 @permission_classes([IsAuthenticated])
 @api_view(http_method_names=["delete"])
-def delete_view(request):
+def delete_user(request):
     request.user.delete()
     return Response({'success': 'Account deleted successfully'}, status=status.HTTP_200_OK)
 
