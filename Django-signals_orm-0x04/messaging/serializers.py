@@ -1,7 +1,7 @@
-from rest_framework import serializers
 from dj_rest_auth.serializers import LoginSerializer
 from django.contrib.auth.hashers import make_password
-from .models import User, Message, Notification, MessageHistory
+from .models import User, Message, MessageHistory
+from rest_framework import serializers
 
 class CustomLoginSerializer(LoginSerializer):
     username = serializers.CharField()
@@ -43,20 +43,17 @@ class UserSerializer(serializers.Serializer):
         return MessageSerializer(obj.inbox.all(), many=True).data
         
 class MessageSerializer(serializers.Serializer):
-    # Input
-    # parent_message = serializers.CharField()
-
-    # Output
+    parent_message = serializers.PrimaryKeyRelatedField(queryset=Message.objects.all(), required=False)
+     # Output
     id = serializers.PrimaryKeyRelatedField(queryset=Message.objects.all(), required=False)
     sender = serializers.SlugRelatedField(slug_field='username',
                             queryset=User.objects.all(), 
                             required=False)
+    receiver = serializers.SlugRelatedField(slug_field='username', queryset=User.objects.all())
     content = serializers.CharField(max_length=255)
-    
-    parent_message = serializers.SlugRelatedField(slug_field='username',queryset=User.objects.all())
     timestamp = serializers.DateTimeField(read_only=True)
 
-    def validate_parent_message(self, value):
+    def validate_receiver(self, value):
         if not value:
             raise serializers.ValidationError({'error': 'This field may not be blank'})
         if not User.objects.filter(username__iexact=value).exists():
@@ -70,8 +67,11 @@ class MessageSerializer(serializers.Serializer):
     
     def validate_sender(self, value):
         return value.username
-
     
+    def validate_parent_message(self, value):
+        if value:
+            return value
+        
 class MessageHistorySerializer(serializers.Serializer):
     id = serializers.PrimaryKeyRelatedField(queryset=MessageHistory.objects.all())
     edited_by = serializers.CharField(read_only=True)

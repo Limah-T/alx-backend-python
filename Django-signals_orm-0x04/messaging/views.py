@@ -19,7 +19,7 @@ class RegisterViewSet(views.APIView):
     queryset = User.objects.all()
 
     def post(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)
+        serializer = self.serializer_class(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(data=serializer.data, status=status.HTTP_200_OK)
@@ -56,17 +56,18 @@ class MessageModelViewSet(viewsets.ModelViewSet):
     pagination_class = [PageNumberPagination]
 
     def get_queryset(self):
-        return Message.objects.select_related('sender', 'parent_message').all()
+        return Message.objects.select_related('sender').all()
     
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        reciever = serializer.validated_data.get("parent_message")
+        reciever = serializer.validated_data.get("receiver")
         content = serializer.validated_data.get("content")
         recipient = get_object_or_404(User, username=reciever)
+        print(serializer.validated_data)
         Message.objects.create(
-            sender=request.user, parent_message=recipient, 
-            content=content)
+            sender=request.user, receiver=recipient, 
+            content=content, parent_message=serializer.validated_data.get('parent_message'))
         return Response({"success": f"Successfully sent message to {reciever}"},
                          status=status.HTTP_200_OK)
     

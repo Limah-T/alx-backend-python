@@ -1,12 +1,20 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+class UnreadMessagesManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(read=False).only('sender', 'parent_message', 'content', 'timestamp').select_related('sender', 'parent_message')
+    
 class Message(models.Model):
     sender = models.ForeignKey(User, on_delete=models.CASCADE, related_name='outbox')
-    parent_message = models.ForeignKey(User, on_delete=models.CASCADE, related_name='inbox')   
+    parent_message = models.ForeignKey('self', on_delete=models.CASCADE, related_name='conversation', null=True, blank=True)   
     content = models.TextField(null=False, blank=False)
+    receiver = models.ForeignKey(User, on_delete=models.CASCADE, related_name='inbox')
+    read = models.BooleanField(default=False)
     timestamp = models.DateTimeField(auto_now_add=True)
     edited = models.BooleanField(default=False)
+
+    objects = UnreadMessagesManager()
 
     def save(self, *args, **kwargs):
         if self.content:
@@ -23,5 +31,9 @@ class MessageHistory(models.Model):
     old_content = models.TextField(null=False, blank=True)
     recipient = models.CharField(max_length=255, null=False, blank=True)
     edited_at = models.DateTimeField(auto_now_add=True)
+
+    
+
+
 
 

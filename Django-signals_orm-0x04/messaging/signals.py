@@ -1,6 +1,7 @@
 from django.dispatch import receiver
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save, pre_save, post_delete
+from django.core.signals import request_finished
 from .models import Message, Notification, MessageHistory
 import logging
 
@@ -8,7 +9,7 @@ logger = logging.getLogger(__name__)
 
 @receiver(post_save, sender=Message)
 def create_notification(sender, instance, **kwargs):
-    receiver = instance.parent_message
+    receiver = instance.receiver
     Notification.objects.create(
         receiver=receiver,
         message=instance)
@@ -37,3 +38,10 @@ def delete_user(sender, instance, **kwargs):
     user_message_histories = MessageHistory.objects.filter(edited_by=instance.username)
     user_message_histories.delete()
     logger.info(f"Account deleted by user: {instance.username}")
+
+
+@receiver(request_finished, sender=Message)
+def read_messages(sender, instance, **kwargs):
+    print(instance)
+    instance.read=True
+    print("Done")
