@@ -7887,3 +7887,5 @@ INFO 2025-07-31 08:42:38,973 signals 17976 3444 Message object (10) has been cre
 INFO 2025-07-31 08:42:38,974 signals 17976 3444 Notification sent to: Message object (1) at 2025-07-31 07:42:38.961256+00:00
 INFO 2025-07-31 08:42:38,975 basehttp 17976 3444 "POST /api/messages/ HTTP/1.1" 200 48
 INFO 2025-07-31 08:42:46,046 basehttp 17976 3444 "GET /api/messages/ HTTP/1.1" 200 1393
+INFO 2025-07-31 08:46:48,900 autoreload 28880 19616 Watching for file changes with StatReloader
+INFO 2025-07-31 08:46:53,014 basehttp 28880 24644 "GET /api/messages/ HTTP/1.1" 200 1393
