@@ -47,7 +47,8 @@ class UserViewSet(viewsets.ModelViewSet):
         serializer = self.get_serializer(self.queryset, many=True)
         return Response(data=serializer.data, status=status.HTTP_200_OK)
 
-# [Message.objects.filter()]    
+# [Message.objects.filter()] 
+# ["Message.unread.unread_for_user"]   
 class MessageModelViewSet(viewsets.ModelViewSet):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
@@ -56,7 +57,7 @@ class MessageModelViewSet(viewsets.ModelViewSet):
     pagination_class = [PageNumberPagination]
 
     def get_queryset(self):
-        return Message.objects.select_related('sender').all()
+        return Message.objects.filter(unread=True).only('sender', 'parent_message', 'content', 'timestamp').select_related('sender', 'parent_message')
     
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
