@@ -8,6 +8,7 @@ from rest_framework.decorators import api_view, permission_classes, authenticati
 from dj_rest_auth.jwt_auth import JWTAuthentication
 from dj_rest_auth.views import LoginView
 from django.shortcuts import get_object_or_404
+from django.views.decorators.cache import cache_page
 from .serializers import UserSerializer, MessageSerializer, MessageHistorySerializer
 from .models import User, Message, MessageHistory
 
@@ -55,6 +56,7 @@ class MessageModelViewSet(viewsets.ModelViewSet):
     http_method_names = ["post", "get", "patch", "put", "delete"]
     serializer_class = MessageSerializer
     pagination_class = [PageNumberPagination]
+    method = ["GET", "HEAD"]
 
     def get_queryset(self):
         return Message.objects.filter(unread=True).only('sender', 'parent_message', 'content', 'timestamp').select_related('sender', 'parent_message')
@@ -71,7 +73,7 @@ class MessageModelViewSet(viewsets.ModelViewSet):
             content=content, parent_message=serializer.validated_data.get('parent_message'))
         return Response({"success": f"Successfully sent message to {reciever}"},
                          status=status.HTTP_200_OK)
-    
+    @cache_page(60 * 1)
     def list(self, request, *args, **kwargs):
         serializer = self.get_serializer(self.get_queryset(), many=True)
         return Response({'success':'Successfully retrieved all messages',

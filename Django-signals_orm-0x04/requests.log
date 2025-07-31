@@ -7989,3 +7989,194 @@ ERROR 2025-07-31 08:56:08,635 basehttp 15404 6872 "GET /api/messages/ HTTP/1.1" 
 INFO 2025-07-31 08:56:21,303 autoreload 15404 29040 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
 INFO 2025-07-31 08:56:22,090 autoreload 14452 18820 Watching for file changes with StatReloader
 INFO 2025-07-31 08:56:43,392 basehttp 14452 3372 "GET /api/messages/ HTTP/1.1" 200 1393
+INFO 2025-07-31 11:08:26,219 autoreload 4140 19656 Watching for file changes with StatReloader
+WARNING 2025-07-31 11:08:31,144 log 4140 3020 Unauthorized: /api/messages/
+WARNING 2025-07-31 11:08:31,145 basehttp 4140 3020 "GET /api/messages/ HTTP/1.1" 401 172
+INFO 2025-07-31 11:09:16,365 basehttp 4140 3020 "POST /api/token/refresh/ HTTP/1.1" 200 489
+WARNING 2025-07-31 11:09:50,273 log 4140 3020 Unauthorized: /api/messages/
+WARNING 2025-07-31 11:09:50,274 basehttp 4140 3020 "GET /api/messages/ HTTP/1.1" 401 172
+WARNING 2025-07-31 11:10:32,348 log 4140 3020 Unauthorized: /api/messages/
+WARNING 2025-07-31 11:10:32,349 basehttp 4140 3020 "GET /api/messages/ HTTP/1.1" 401 172
+ERROR 2025-07-31 11:10:45,055 log 4140 3020 Internal Server Error: /api/messages/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\utils\decorators.py", line 185, in _view_wrapper
+    result = _pre_process_request(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\utils\decorators.py", line 131, in _pre_process_request
+    result = middleware.process_request(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\middleware\cache.py", line 156, in process_request
+    if request.method not in ("GET", "HEAD"):
+       ^^^^^^^^^^^^^^
+AttributeError: 'MessageModelViewSet' object has no attribute 'method'
+ERROR 2025-07-31 11:10:45,060 basehttp 4140 3020 "GET /api/messages/ HTTP/1.1" 500 116884
+INFO 2025-07-31 11:11:09,723 autoreload 4140 19656 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-31 11:11:10,446 autoreload 10048 20920 Watching for file changes with StatReloader
+INFO 2025-07-31 11:11:14,391 autoreload 10048 20920 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-31 11:11:14,972 autoreload 18996 22888 Watching for file changes with StatReloader
+INFO 2025-07-31 11:11:16,757 autoreload 18996 22888 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-31 11:11:17,309 autoreload 30232 29996 Watching for file changes with StatReloader
+INFO 2025-07-31 11:11:19,083 autoreload 30232 29996 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-31 11:11:19,607 autoreload 30976 2836 Watching for file changes with StatReloader
+WARNING 2025-07-31 11:11:21,784 log 30976 21708 Method Not Allowed: /api/messages/
+WARNING 2025-07-31 11:11:21,785 basehttp 30976 21708 "GET /api/messages/ HTTP/1.1" 405 40
+INFO 2025-07-31 11:11:30,952 autoreload 30976 2836 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-31 11:11:31,571 autoreload 17780 8040 Watching for file changes with StatReloader
+INFO 2025-07-31 11:11:34,471 autoreload 17780 8040 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-31 11:11:35,069 autoreload 23156 7244 Watching for file changes with StatReloader
+ERROR 2025-07-31 11:11:36,642 log 23156 3300 Internal Server Error: /api/messages/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\utils\decorators.py", line 185, in _view_wrapper
+    result = _pre_process_request(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\utils\decorators.py", line 131, in _pre_process_request
+    result = middleware.process_request(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\middleware\cache.py", line 156, in process_request
+    if request.method not in ("GET", "HEAD"):
+       ^^^^^^^^^^^^^^
+AttributeError: 'MessageModelViewSet' object has no attribute 'method'
+ERROR 2025-07-31 11:11:36,647 basehttp 23156 3300 "GET /api/messages/ HTTP/1.1" 500 116884
+INFO 2025-07-31 11:12:22,706 autoreload 23156 7244 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-31 11:12:23,401 autoreload 21352 2308 Watching for file changes with StatReloader
+ERROR 2025-07-31 11:12:25,336 log 21352 2056 Internal Server Error: /api/messages/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\mixins.py", line 40, in list
+    page = self.paginate_queryset(queryset)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\generics.py", line 173, in paginate_queryset
+    if self.paginator is None:
+       ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\generics.py", line 166, in paginator
+    self._paginator = self.pagination_class()
+                      ~~~~~~~~~~~~~~~~~~~~~^^
+TypeError: 'list' object is not callable
+ERROR 2025-07-31 11:12:25,340 basehttp 21352 2056 "GET /api/messages/ HTTP/1.1" 500 115267
+INFO 2025-07-31 11:12:41,150 autoreload 21352 2308 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-31 11:12:41,768 autoreload 30552 23272 Watching for file changes with StatReloader
+ERROR 2025-07-31 11:12:43,733 log 30552 8164 Internal Server Error: /api/messages/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\mixins.py", line 40, in list
+    page = self.paginate_queryset(queryset)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\generics.py", line 173, in paginate_queryset
+    if self.paginator is None:
+       ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\generics.py", line 166, in paginator
+    self._paginator = self.pagination_class()
+                      ~~~~~~~~~~~~~~~~~~~~~^^
+TypeError: 'list' object is not callable
+ERROR 2025-07-31 11:12:43,736 basehttp 30552 8164 "GET /api/messages/ HTTP/1.1" 500 115267
+INFO 2025-07-31 11:12:54,183 autoreload 30552 23272 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-31 11:12:54,691 autoreload 23092 18756 Watching for file changes with StatReloader
+INFO 2025-07-31 11:12:56,457 autoreload 23092 18756 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-31 11:12:57,056 autoreload 13532 24752 Watching for file changes with StatReloader
+INFO 2025-07-31 11:13:01,953 autoreload 13532 24752 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-31 11:13:02,508 autoreload 26320 32460 Watching for file changes with StatReloader
+ERROR 2025-07-31 11:13:06,139 log 26320 21132 Internal Server Error: /api/messages/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\utils\decorators.py", line 185, in _view_wrapper
+    result = _pre_process_request(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\utils\decorators.py", line 131, in _pre_process_request
+    result = middleware.process_request(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\middleware\cache.py", line 156, in process_request
+    if request.method not in ("GET", "HEAD"):
+       ^^^^^^^^^^^^^^
+AttributeError: 'MessageModelViewSet' object has no attribute 'method'
+ERROR 2025-07-31 11:13:06,145 basehttp 26320 21132 "GET /api/messages/ HTTP/1.1" 500 116884
+INFO 2025-07-31 11:13:26,530 autoreload 26320 32460 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-31 11:13:27,239 autoreload 30464 11052 Watching for file changes with StatReloader
+INFO 2025-07-31 11:13:29,089 autoreload 30464 11052 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-31 11:13:29,590 autoreload 7188 12780 Watching for file changes with StatReloader
+INFO 2025-07-31 11:13:35,479 autoreload 7188 12780 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-31 11:13:36,116 autoreload 30788 4052 Watching for file changes with StatReloader
+INFO 2025-07-31 11:13:37,978 autoreload 30788 4052 C:\Users\User\OneDrive\Desktop\alx-backend-python\Django-signals_orm-0x04\messaging\views.py changed, reloading.
+INFO 2025-07-31 11:13:38,769 autoreload 23984 17664 Watching for file changes with StatReloader
+INFO 2025-07-31 11:13:43,536 basehttp 23984 22164 "GET /api/messages/ HTTP/1.1" 200 1393
+INFO 2025-07-31 11:14:00,177 basehttp 23984 22164 "GET /api/messages/ HTTP/1.1" 200 1393
+INFO 2025-07-31 11:14:01,547 basehttp 23984 22164 "GET /api/messages/ HTTP/1.1" 200 1393
+INFO 2025-07-31 11:14:02,831 basehttp 23984 22164 "GET /api/messages/ HTTP/1.1" 200 1393

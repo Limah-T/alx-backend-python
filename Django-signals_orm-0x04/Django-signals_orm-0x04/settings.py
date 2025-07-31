@@ -189,3 +189,10 @@ LOGGING = {
     },
 }
 X_FRAME_OPTIONS = 'DENY'
+
+CACHES = { 
+    'default': { 
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache', 
+        'LOCATION': 'unique-snowflake', 
+        }
+}
