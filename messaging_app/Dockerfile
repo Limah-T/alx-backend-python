@@ -11,11 +11,12 @@ RUN apk add --no-cache \
     musl-dev \
     libffi-dev \
     openssl-dev \
-    postgresql-dev \
     zlib-dev \
-    jpeg-dev
+    jpeg-dev \
+    mariadb-connector-c-dev \
+    pkgconfig
 
-# Install Python dependencies
+    # Install Python dependencies
 COPY requirements.txt /
 RUN pip install --upgrade pip \
     && pip install -r /requirements.txt
