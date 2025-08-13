@@ -1,3 +1,4 @@
+# MYSQL_DB
 services:
   web:
     build: .
