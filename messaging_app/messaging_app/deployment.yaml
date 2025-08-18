@@ -34,3 +34,19 @@ spec:
       targetPort: 8000
   type: ClusterIP
 
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: wrk-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: wrk
+        image: williamyeh/wrk
+        command: ["wrk"]
+        args: ["-t4", "-c100", "-d30s", "http://messagingservice.default.svc.cluster.local:80/
+"]
+      restartPolicy: Never
+  backoffLimit: 0
+
