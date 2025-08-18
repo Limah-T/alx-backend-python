@@ -28,6 +28,7 @@ metadata:
 spec:
   selector:
     app: django-app
+    version: blue
   ports:
     - protocol: TCP
       port: 80
