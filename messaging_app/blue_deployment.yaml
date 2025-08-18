@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: messaging-app
-        image: limtech001/messaging_app:v1.0
+        image: limtech001/messaging_app:v2.0
         ports:
         - containerPort: 8000
         env:
