@@ -9,10 +9,27 @@ pipeline {
                         url: 'https://github.com/Limah-T/alx-backend-python.git',
                         credentialsId: 'github-creds'
 
-                    // Use ShiningPanda's pythonEnv to manage virtualenv
+                    // Install dependencies inside Python virtualenv
                     pythonEnv('python3') {
                         echo 'Installing dependencies...'
                         sh 'pip3 install -r messaging_app/requirements.txt'
+                    }
+                }
+            }
+
+            stage('Build Docker Image') {
+                steps {
+                    script {
+                        // Build the Docker image
+                        def appImage = docker.build("limtech001/messaging_app:${env.BUILD_ID}", "-f messaging_app/Dockerfile .")
+
+                        // Push to DockerHub
+                        docker.withRegistry('https://index.docker.io/v1/', 'dockerhub-creds') {
+                            echo 'Pushing Docker image to Docker Hub...'
+                            appImage.push()          // Push BUILD_ID tag
+                            appImage.push("latest")  // Push 'latest' tag
+                            appImage.push("v1.0")    // Push versioned tag
+                        }
                     }
                 }
             }
