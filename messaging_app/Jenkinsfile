@@ -9,7 +9,7 @@ pipeline {
                     url: 'https://github.com/Limah-T/alx-backend-python.git',
                     credentialsId: 'github-creds'
 
-                withPythonEnv('python3') {
+                }
                     echo 'Installing dependencies...'
                     sh 'pip install -r messaging_app/requirements.txt'
                 }
