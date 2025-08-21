@@ -12,7 +12,7 @@ pipeline {
                     // Use ShiningPanda's pythonEnv to manage virtualenv
                     pythonEnv('python3') {
                         echo 'Installing dependencies...'
-                        sh 'pip install -r messaging_app/requirements.txt'
+                        sh 'pip3 install -r messaging_app/requirements.txt'
                     }
                 }
             }
