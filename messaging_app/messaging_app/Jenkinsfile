@@ -1,0 +1,45 @@
+pipeline {
+    agent any 
+        stages {
+           stage('Build') {
+                steps {
+                    echo 'Building...'
+                    // Checkout with GitHub credentials
+                    git branch: 'main',
+                        url: 'https://github.com/Limah-T/alx-backend-python.git',
+                        credentialsId: 'github-creds'
+
+                    // Use ShiningPanda's pythonEnv to manage virtualenv
+                    pythonEnv('python3') {
+                        echo 'Installing dependencies...'
+                        sh 'pip install -r messaging_app/requirements.txt'
+                    }
+                }
+            }
+
+            stage('Test') {
+                steps {
+                    pythonEnv('python3') {
+                        echo 'Running tests with pytest...'
+                        sh 'pytest messaging_app/ --junitxml=report.xml'
+                    }
+                }
+                post {
+                    always {
+                        junit 'report.xml'  // publish test results in Jenkins UI
+                    }
+                }
+            }
+
+            stage('Deploy') {
+                steps {
+                    echo 'Deploying...'
+                    echo "About to deploy the messaging_app"
+                    sh 'kubectl apply -f deployment.yaml'
+                    echo "Getting pods..."
+                    sh 'kubectl get pods'
+                }
+            }
+        }    
+}
+
