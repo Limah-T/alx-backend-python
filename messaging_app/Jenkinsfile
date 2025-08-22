@@ -1,12 +1,11 @@
 pipeline {
-    agent {
-        docker {
-            image 'python:3.10'   // official Python image with pip preinstalled
-        }
-    }
-
+    agent any
     stages {
         stage('Build') {
+            agent { 
+                dockerfile true 
+                file 'messaging_app/Dockerfile'
+            }
             steps {
                 echo 'Building...'
                 git branch: 'main',
