@@ -2,9 +2,12 @@ pipeline {
     agent any
     stages {
         stage('Build') {
-            agent { 
-                dockerfile true 
+            agent {
+                dockerfile {
+                    filename 'messaging_app/Dockerfile'
+                }
             }
+
             steps {
                 echo 'Building...'
                 git branch: 'main',
