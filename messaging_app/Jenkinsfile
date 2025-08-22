@@ -4,7 +4,6 @@ pipeline {
         stage('Build') {
             agent { 
                 dockerfile true 
-                file 'messaging_app/Dockerfile'
             }
             steps {
                 echo 'Building...'
